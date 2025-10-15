@@ -33,14 +33,6 @@ The aim is to provide **transparency, traceability, and clarity** for reviewers 
 
 ## 📁 Repository Structure
 
-.
-├── adrs/ # Architecture Decision Records
-├── requirements/ # Business & technical requirements
-├── hld/ # High Level Design artefacts (diagrams, docs)
-└── README.md # Landing page for reviewers
-
-yaml
-
 - `adrs/` → Architecture Decision Records 
 - `requirements/` → Business & technical requirements
 - `hld/` → High Level Design artefacts (diagrams, docs)
