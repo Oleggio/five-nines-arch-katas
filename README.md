@@ -27,7 +27,12 @@ The aim is to provide **transparency, traceability, and clarity** for reviewers 
 
 ## 🎯 Objective
 
-*Placeholder text — describe the kata problem statement in a few sentences here.*
+- Ensure smooth system operations (design from scratch - green field)
+- Dynamic Pricing - more competitive pricing, addresses expansion ambitions and retention goals
+- Demand Forecasting - uses internal and external data (weather, traffic, events) to forecast demand
+- Maintenance
+- - Operational Efficience: Supply Optimisation
+- - Maintenance Prediction (sensor data - e.g. battery)
 
 ---
 
