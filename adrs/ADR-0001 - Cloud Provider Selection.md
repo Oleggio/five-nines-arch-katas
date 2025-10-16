@@ -17,7 +17,7 @@ We choose **Google Cloud Platform (GCP)** as the core cloud provider.
   GCP’s global backbone ensures low-latency services for users in multiple cities, which is crucial for real-time micromobility operations.
 
 - **AI/ML Integration Made Easy**  
-  Vertex AI and AutoML enable demand prediction, route optimization, and user behavior insights without managing separate ML infrastructure.
+  Vertex AI, AutoML and Gemini enable demand prediction, route optimization, and user behavior insights without managing separate ML infrastructure.
 
 - **Operational Efficiency & Dev Experience**  
   Tight integration between services reduces engineering overhead, accelerates development, and ensures smooth deployment pipelines.
