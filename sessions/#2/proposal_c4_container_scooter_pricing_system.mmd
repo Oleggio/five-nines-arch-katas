@@ -1,0 +1,19 @@
+C4Container
+    title Container Diagram for e-scooter and e-bike rental
+
+    Person(user, "User", "A MobiCorp user")
+
+    Container_Boundary(c1, "MobiCorp Rental System") {
+        Container(mobile, "Mobile App", "iOS/Android", "Provides booking functionality to users on mobile devices")
+        Container(webserver, "Web Server", "API Gateway", "Handles API requests from mobile app, routes to services, authenticates user")
+        Container(pricingService, "Pricing Service", "Service", "Manages prices per minute
+        <br>Prices may differ at different times of day, at different locations, etc
+        <br>Manages prices in local currencies")
+
+        Container(messageBroker, "Message Broker")
+
+        Container(competitorPricingMonitoringService, "Service", "Runs scraping jobs to fetch real-time")
+    }
+
+    Rel(webserver, pricingService, "Fetch pricing options for vehicle", "Internal API")
+    Rel(competitorPricingMonitoringService, pricingService, "Notifies pricing service to reduce prices if competitors are reducing them")

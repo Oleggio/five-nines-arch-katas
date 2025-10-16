@@ -1,0 +1,22 @@
+C4Container
+    title Container Diagram for e-scooter and e-bike rental
+    Person(user, "User", "A MobiCorp user")
+
+    Container_Boundary(c1, "MobiCorp Rental System") {
+        Container(mobile, "Mobile App", "iOS/Android", "Provides booking functionality to users on mobile devices")
+        Container(feedbackService, "Feedback Service", "Service", "Aggregates user feedback")
+        Container(userService, "User info", "Service", "Manages user info")
+        Container(statisticsService, "Statistics info", "Service", "Aggregates info about problematic locations")
+    }
+
+    Container_Boundary(c2, "AI subsystem") {
+        Container(feedbackAnalyzer, "Feedback AI analyzer", "
+        1. Tasked to determine if feedback was negative
+        <br> 2. Reacts to 'bad location' option (sends location when user opened an app and ride start location to statics service)")
+    }
+
+    Rel(mobile, userService, "Send event when customer started looking for a ride to help locate original location")
+    Rel(user, mobile, "Finish ride, provide optional feedback - what was good (options), write free text + ride information")
+    Rel(mobile, feedbackService, "Send feedback", "Via API Gateway")
+    Rel(feedbackService, feedbackAnalyzer, "Send feedback for analysis", "Messaging")
+    Rel(feedbackAnalyzer, statisticsService, "Send location info where customer could not easily find a vehicle", "Messaging")
