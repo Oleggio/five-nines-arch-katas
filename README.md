@@ -17,10 +17,9 @@
 
 ## 📌 Overview
 
-This repository documents the end-to-end architecture thinking process for the given 2025 kata scenario prepared by **team**.  
-It focuses on:
-- Clear articulation of **requirements**
-- Well-structured **design decisions**
+This repository documents the end-to-end architecture thinking process for the given 2025 kata scenario prepared by **team**. It focuses on:
+- Clear articulation of business problems and **requirements**
+- Well-structured **solution design decisions**
 - Concise and visual **high-level design**
 
 The aim is to provide **transparency, traceability, and clarity** for reviewers and collaborators.
