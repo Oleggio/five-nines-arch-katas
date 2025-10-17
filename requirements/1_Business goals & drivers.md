@@ -20,7 +20,7 @@ Business Drivers → Business Goals → Capabilities / Solutions
   -  Expandability, low time to market.
 - **Automate Capabilities**: Whever applicable, leverage AI for processing customer experience, analytical data and operational decisions. 
 - **Remain Operational**: Ensure reliable, scalable and expandable service across markets of operation.
-- **Be Compliant**: Ensure compliance with license restrictions and local mobility regulations.
+- **Be Compliant**: Ensure compliance with license restrictions and local mobility / data management regulations.
 
 
 ## Drivers -> Goals -> Solutions
@@ -35,4 +35,4 @@ Business Drivers → Business Goals → Capabilities / Solutions
 | Market Competition | Market Expansion | Low time to market | Expandable and scalable overall solution architecture |
 | Market Competition | Automate Capabilities| AI application | _all above AI functionality_ |
 | Customer Dissatisfaction | Remain Operational | Reliability, scalability and expandability | AI and Core Functionality DevOps |
-| Regulatory Requirements | Be Compliant | License and regulatory compliance | AI and Core Functionality security and compliance |
+| Regulatory Requirements | Be Compliant | License and regulatory compliance | Restricting vehicle movement on unsolicited territories via GPS tracking & disabling. AI and Core Functionality security and compliance. |
