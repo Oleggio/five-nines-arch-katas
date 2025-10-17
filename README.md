@@ -12,6 +12,7 @@
 - [Objectives](#-objectives)
 - [Repository Structure](#-repository-structure)
 - [How to Review](#-how-to-review)
+- [Technology Stack Overview][(#-technology-stack-overview)]
 
 ---
 
