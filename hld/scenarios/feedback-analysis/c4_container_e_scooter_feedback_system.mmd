@@ -11,6 +11,10 @@ C4Container
             Container(statisticsService, "Statistics Service", "Service", "Aggregates info about problematic locations")
             Container(feedbackAiAnalyzer, "Feedback AI analyzer", "Service", "Classifies feedback/extracts data")
         }
+
+        Container_Boundary(c2, "Fleet Ops Subsystem") {
+            Container(maintenanceService, "Maintenance Service", "Service", "Collects info about vehicles to fix")
+        }
     }
 
     Rel(mobile, userService, "Sends app usage info", "Events")
@@ -19,4 +23,5 @@ C4Container
     Rel(feedbackService, feedbackAiAnalyzer, "Send feedback for analysis", "Messaging")
     Rel(feedbackAiAnalyzer, statisticsService, "Send problematic locations", "Messaging")
     Rel(feedbackService, userService, "Gets ride info", "Internal API")
+    Rel(feedbackAiAnalyzer, maintenanceService, "Describes issues with vehicles", "Messaging")
 
