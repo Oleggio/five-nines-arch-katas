@@ -31,7 +31,7 @@ Business Drivers → Business Goals → Capabilities / Solutions
 | Fragmented Demand, Market Competition  | Increase Revenue | Detect & forecast demand | AI for demand forecasting |
 | Fragmented Demand, Market Competition  | Increase Revenue | Detect & forecast demand | AI for supply planning/placement |
 | Fragmented Demand, Market Competition  | Increase Revenue | Reduce operational costs | AI for maintenance optimization. AI for customer feedback loop |
-| Market Competition | Market Expansion | Serving multiple territories | AI for multilang user experience |
+| Market Competition | Market Expansion | Serving multiple territories | Multilang user experience support |
 | Market Competition | Market Expansion | Low time to market | Expandable and scalable overall solution architecture |
 | Market Competition | Automate Capabilities| AI application | _all above AI functionality_ |
 | Customer Dissatisfaction | Remain Operational | Reliability, scalability and expandability | AI and Core Functionality DevOps |
