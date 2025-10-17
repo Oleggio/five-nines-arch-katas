@@ -6,7 +6,7 @@
 - **Mobile Device**: All vehicles are locked/unlocked, reserved and paid for via mobile application (NFC function is required). There is no touch screen or other logical functionality on the device except for basic one: lock/unlock, start/stop
 - **Pricing**: Rental pricing is calculated based on rental duration. Options available: **per-ride fixed price** (personalized discounts applied, route should be built and followed, at the destination point the rental is stopped, device is blocked when misused - changing rental model is needed); **duration-based price** (solely for time from rental start to rental end), and **subscription price** (per km or hours prebooked or full-month, cheaper for frequent riders).
 - **GPS Tracking**: All vehicles have GPS trackers on them. GPS tracker shares information with the central or regional server every 30 min.
-- **User Software**: Mobile application for user experience already exists, covering only core functionality (register, view policies & pricing, reserve, pay, ride, return, lock/unlock, view statistics). See [See Appendix A: Core functionality](Appendix%20A:%20Core%20functionality.md) for details.  
+- **User Software**: Mobile application for user experience already exists, covering only core functionality (register, view policies & pricing, reserve, pay, ride, return, lock/unlock, view statistics). See [See Appendix A: Core functionality](/Appendix%20A:%20Core%20functionality.md) for details.  
 - **Legacy Architecture**: For functionality covered by the project, there is no legacy software system to migrate from. The solution will be built from scratch (greenfield architecture).
 
 
