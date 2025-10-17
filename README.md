@@ -73,7 +73,7 @@ Design from scratch (green field architecture) functionality for:
 
 _This is a living document. It will evolve as the kata progresses._
 
-## Technology Stack Overview
+## ⚙️ Technology Stack Overview
 | Layer                          | Services / Components                                                                                                                   |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | Edge & Connectivity             | MQTT Gateway (GKE), Device Firmware SDK                                                                                                  |
