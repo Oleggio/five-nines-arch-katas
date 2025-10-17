@@ -66,8 +66,8 @@ Design from scratch (green field architecture) functionality for:
 ## 📝 How to Review
 
 1. **Start with** `requirements/` to understand the problem space.  
-2. **Review** `adrs/` to follow the decision trail.  
-3. **Explore** `hld/` for high-level architecture views and solution outline.  
-4. Return here for **conclusion and summary** (to be added later in the kata lifecycle).
+2. **Explore** `hld/` for high-level architecture views and solution outline.
+4. **Review** `adrs/` to follow the decision trail.   
+5. Return here for **conclusion and summary** (to be added later in the kata lifecycle).
 
 _This is a living document. It will evolve as the kata progresses._
