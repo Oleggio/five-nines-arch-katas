@@ -1,6 +1,6 @@
 # Functional Requirements
 
-This is an architectural document that contains requirement analysis and non-business related information can be added here for better architectural decision-making.
+> Note: This is an architectural document that contains requirement analysis and non-business related information can be added here for better architectural decision-making.
 1. Keep core functionality of the rental business (see Apendix A)
 2. Enable below scenarios of automating data processing and data exchange (AI-based):
 
