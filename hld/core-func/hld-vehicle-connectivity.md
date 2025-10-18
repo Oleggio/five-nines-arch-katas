@@ -58,3 +58,17 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 - Define SLOs early for telemetry & commands.  
 - Keep storage and processing regional for compliance.  
 - Choose managed IoT platform vs. broker + custom mgmt based on required features.
+
+# Availability Enhancements (Target: 99.9%)
+Following measures proposed to avoid a single point of failure and ensure graceful degradation on outages, fast recovery, and controlled SLO breaches
+
+| Layer / Area               | Availability Measures                                                                                      |
+|----------------------------|------------------------------------------------------------------------------------------------------------|
+| **Gateway & LB**           | Multi-zone clusters (N+1), external TCP/SSL LB with health checks, autoscaling, local buffering             |
+| **Event Backbone**         | Pub/Sub / Kafka replication (≥3), message retention, idempotent replay                                      |
+| **Processing**             | Parallel zone deployment, checkpointing, fast recovery                                                      |
+| **Storage**                | Regional / multi-zone replication, automatic failover, low-latency cache                                   |
+| **Device Connectivity**    | Graceful reconnect, retry with backoff, priority command lanes, ACK & retry                                 |
+| **Operations**             | Health checks, autoscaling, runbooks, failover playbooks, monitoring of latency/backlog                     |
+| **Disaster Recovery**      | RPO ≤ 5 min, RTO ≤ 15 min, secondary region backups, automated failover                                    |
+| **Observability & SLOs**   | Dashboards for uptime/backlog/latency, alerting on SLO breaches, error rate monitoring                      |
