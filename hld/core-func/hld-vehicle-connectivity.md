@@ -20,6 +20,9 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 | Security & IAM          | TLS/mTLS, rotation, revocation, IAM least privilege                                                 |
 | Observability           | Metrics, logs, alerting, SLOs for telemetry freshness and command latency                            |
 
+## Commands and Data Flow
+![Alt text](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/Vehicle%20Connectivity.drawio.png?raw=true "Title")
+
 ## Gateway & Load Balancing
 - Clustered MQTT broker on K8s (e.g., EMQX / HiveMQ), fronted by TCP/SSL load balancer.  
 - Horizontal autoscaling per region/vehicle class.  
