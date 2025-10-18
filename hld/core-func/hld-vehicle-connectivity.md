@@ -1,4 +1,4 @@
-# HLD - Vehicle Connectivity
+<img width="2313" height="846" alt="Vehicle Connectivity" src="https://github.com/user-attachments/assets/c61cf5ee-5d18-446f-bc0d-89141a63e492" /># HLD - Vehicle Connectivity
 
 ## Overview 
 To enable AI-driven fleet operations and address project objectives we need to establish robust vehicle connectivity, data and command flow.
@@ -21,7 +21,8 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 | Observability           | Metrics, logs, alerting, SLOs for telemetry freshness and command latency                            |
 
 ## Commands and Data Flow
-![Alt text](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/Vehicle%20Connectivity.drawio.png?raw=true "Title")
+<img width="2313" height="846" alt="Vehicle Connectivity" src="https://github.com/user-attachments/assets/9d4f4841-6d7f-487d-b412-b6f7b06b1628" />
+
 
 ## Gateway & Load Balancing
 - Clustered MQTT broker on K8s (e.g., EMQX / HiveMQ), fronted by TCP/SSL load balancer.  
