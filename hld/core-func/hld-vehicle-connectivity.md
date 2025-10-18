@@ -59,7 +59,7 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 - Keep storage and processing regional for compliance.  
 - Choose managed IoT platform vs. broker + custom mgmt based on required features.
 
-# Availability Enhancements (Target: 99.9%)
+## Availability Enhancements (Target: 99.9%)
 Following measures proposed to avoid a single point of failure and ensure graceful degradation on outages, fast recovery, and controlled SLO breaches
 
 | Layer / Area               | Availability Measures                                                                                      |
