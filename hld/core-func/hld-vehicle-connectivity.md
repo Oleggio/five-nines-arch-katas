@@ -1,4 +1,4 @@
-<img width="2313" height="846" alt="Vehicle Connectivity" src="https://github.com/user-attachments/assets/c61cf5ee-5d18-446f-bc0d-89141a63e492" /># HLD - Vehicle Connectivity
+# HLD - Vehicle Connectivity
 
 ## Overview 
 To enable AI-driven fleet operations and address project objectives we need to establish robust vehicle connectivity, data and command flow.
