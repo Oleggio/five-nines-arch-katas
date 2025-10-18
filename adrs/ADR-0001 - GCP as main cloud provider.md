@@ -1,4 +1,4 @@
-# ADR-0001 — Cloud Provider Selection
+# ADR-0001 — GCP as main cloud provider
 ## Context
 We are building a micro-mobility solution (e-bikes, scooters, car-sharing) requiring real-time tracking, routing, payments, analytics, and scalable fleet management.
 
