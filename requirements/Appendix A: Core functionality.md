@@ -1,4 +1,8 @@
-# 🚗 Core User Features
+# Core User (Mobile App) & Operations (Ops UI) Features
+
+> Note: Mobile App is minimalistic by features and design. Operations processes are half-manual, the corresponding software is mostly based on GoogleSheets fetching data from database via connectors.
+
+## 🚗 Core User Features
 
 - **User Registration and Login**  
   - Account creation with email, phone, or social login.  
@@ -32,3 +36,28 @@
 - **Fees and Charges**  
   - Price calculation based on parameters (vehicle type, period of reservation, type of reservation)
   - Automatic calculation of late-return or damage fees as well as penalties.
+
+
+ 
+# ⚙️ Operations Features
+
+- **Fleet Overview Dashboard**
+  - View all vehicles per territory, including model, plate, and battery/fuel level.  
+  - Filter by status: *Free*, *Reserved*, *Riding*, *Under Maintenance*.
+
+- **Vehicle Details and History**  
+  - Access full servicing and maintenance history per vehicle.
+
+- **Operational Control**  
+  - Remote **lock/unlock** capability.  
+  - Remote **engine or motor switch-off** for security or safety, by support request or to stop usage on unsolicited territory.  
+
+- **Task Management**  
+  - Assign manual tasks to operations team (battery swap, relocation, cleaning, maintenance).
+
+- **Fleet Monitoring**  
+  - Real-time visibility of vehicle locations and statuses.  
+  - Integration with local traffic and regulation data for compliance.
+
+- **Support and Communication**  
+  - Users can contact operations (and vice versa) for issue resolution **by phone call only**.
