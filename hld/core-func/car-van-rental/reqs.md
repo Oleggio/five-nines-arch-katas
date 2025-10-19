@@ -1,23 +1,28 @@
 ## Detailed Functional Requirements​
 Each requirement includes description, detailed specs, and business rules:
   - Advanced booking (7-day advance, fixed duration)
-  - Reservation management with extensions
+  - Booking eligibility verification (sufficient charge for requested duration)
+  - Reservation management with extensions (conflict checking, approval workflow)
   - Vehicle access control (NFC + remote unlock API)
-  - Return verification (parking bay + EV charger + photo proof)
-  - Payment processing (per-minute, fines, pre-authorization)
-  - Real-time telemetry tracking (GPS, charge, 30-second intervals)
-  - Issue reporting and roadside assistance
-  - Vehicle status lifecycle management
-  - Demand forecasting integration
+  - Return verification (parking bay + EV charger connection + AI photo proof)
+  - Cross-border usage with origin city return constraint
+  - Payment processing (per-minute, fines, pre-authorization with hold/release)
+  - Real-time telemetry tracking (GPS, charge, range, 30-second intervals)
+  - Issue reporting and roadside assistance (breakdown, charge depletion)
+  - Partner charging location integration
+  - Vehicle status lifecycle management (including remote disable capability)
+  - Demand forecasting integration with event publishing
 
 ## Component Architecture​
 Following microservices and bounded context principles:
-  - Booking Service: Availability queries, reservation creation
-  - Rental Lifecycle Service: Unlock, extend, return workflows
-  - Telemetry Ingestion Service: High-volume GPS/sensor data processing
-  - Payment Calculation Service: Per-minute billing + fines
-  - Vehicle Status Manager: Operational status tracking
-  - Demand Forecasting Integration: AI data exchange
+  - Booking Service: Availability queries, reservation creation, charge sufficiency validation
+  - Rental Lifecycle Service: Unlock, extend (with conflict checking), return workflows
+  - Telemetry Ingestion Service: High-volume GPS/sensor data processing, range monitoring
+  - Payment Calculation Service: Per-minute billing + fines, pre-authorization hold/release
+  - Vehicle Status Manager: Operational status tracking, remote disable capability
+  - Partner Charging Integration: Third-party charging location support, payment coordination
+  - Roadside Assistance Dispatcher: Breakdown and charge depletion incident management
+  - Demand Forecasting Integration: AI data exchange, event publishing for utilization patterns
 
 Each component includes interfaces (REST APIs), internal modules, data stores, and dependencies .
 
