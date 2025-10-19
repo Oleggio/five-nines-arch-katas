@@ -430,113 +430,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 
 ---
 
-### FR-CV-025: Vehicle Condition Inspection (Pre-Rental)
-**Business Goal:** Customer protection, dispute prevention, damage accountability
-
-**Description:** Customer conducts mandatory vehicle condition inspection before starting rental using mobile app to document pre-existing damage.
-
-**Source:** Operational best practice - Standard rental industry practice, prevents false damage claims
-
-**Acceptance Criteria:**
-- [ ] Mobile app guides customer through inspection checklist before first use
-- [ ] Customer takes photos of vehicle exterior (4 sides + roof if accessible)
-- [ ] Photos uploaded to cloud storage with timestamp and GPS coordinates
-- [ ] Interior inspection: Cleanliness check, seats, dashboard, cargo area
-- [ ] Customer confirms: "Vehicle condition documented and acceptable"
-- [ ] Pre-existing damage marked on digital vehicle diagram
-- [ ] Inspection must be completed before rental session starts (vehicle stays locked until inspection done)
-- [ ] Inspection report linked to rental session for return comparison
-- [ ] Customer receives inspection summary via email
-
-**Inspection Checklist:**
-
-**Exterior Inspection:**
-- [ ] Front bumper and hood (dents, scratches, paint damage)
-- [ ] Driver side (doors, mirrors, windows)
-- [ ] Rear bumper and trunk/cargo door
-- [ ] Passenger side (doors, mirrors, windows)
-- [ ] Wheels and tires (visible damage, pressure indicators)
-- [ ] Lights (headlights, taillights, turn signals functional)
-- [ ] Windshield (cracks, chips)
-- [ ] Roof (if accessible, van skylights)
-
-**Interior Inspection:**
-- [ ] Seats (stains, tears, burns)
-- [ ] Dashboard and controls (damage, missing items)
-- [ ] Cargo area (clean, odor-free, dry)
-- [ ] Floor mats and carpets (stains, wear)
-- [ ] Seatbelts (functional, clean)
-- [ ] Special equipment (child seat, bike rack if applicable)
-
-**Photo Requirements:**
-- Minimum 4 photos (front, back, left, right angles)
-- Recommended 8+ photos for comprehensive documentation
-- Photo quality: Minimum 1280x720 resolution
-- Photos must show vehicle VIN or license plate for verification
-- Timestamp and GPS embedded in EXIF metadata
-- AI pre-processing: Blur detection (reject blurry photos), lighting validation
-
-**Pre-Existing Damage Documentation:**
-- Customer taps on digital vehicle diagram to mark damage locations
-- For each marked area: Category (scratch/dent/crack/stain), severity (minor/moderate/severe), photo reference
-- Damage visible in previous rental returns: Auto-suggested by system
-- Operations team review: Damage reports validated within 1 hour (crew checks)
-
-**Business Rules:**
-- Inspection mandatory for first-time customers and new vehicle assignments
-- Habitual users (5+ rentals): Optional quick inspection (express mode)
-- Express mode: AI compares current photos with last inspection, flags changes
-- Inspection timeout: 10 minutes to complete, or auto-prompt for assistance
-- Skip option: Only if customer accepts liability for all pre-existing damage (not recommended)
-- Operations override: Crew can mark vehicle as "pre-inspected" if just cleaned/checked
-
-**AI-Assisted Damage Detection:**
-- Vertex AI Vision analyzes uploaded photos for visible damage
-- AI flags potential damage: "Possible dent detected on driver door, please review"
-- Customer confirms or dismisses AI findings
-- AI training: Learns from customer confirmations and return inspections
-- Target accuracy: 80% damage detection rate, <10% false positive rate
-
-**Customer Protection:**
-- Inspection report is legal protection against false damage claims
-- Return comparison: New damage identified by comparing pre/post photos
-- Burden of proof: If damage not in pre-rental inspection, customer may be liable
-- Dispute process: Customer can contest damage claims with inspection evidence
-
-**Integration with Return Process (FR-CV-007):**
-- Return inspection compares current state with pre-rental inspection
-- AI identifies new damage by analyzing photo differences
-- Damage assessment workflow triggered if discrepancies detected
-
-**Error Scenarios:**
-- Photo upload fails → Allow offline storage, sync when connectivity restored
-- AI service unavailable → Manual inspection only, no AI suggestions
-- Customer skips inspection → Liability warning shown, acceptance logged
-- Vehicle already has extensive damage → Operations team notified, vehicle may be removed from fleet
-
-**Accessibility Considerations:**
-- Voice guidance for visually impaired customers
-- Haptic feedback for photo capture confirmation
-- High contrast mode for damage diagram marking
-- Option to request crew assistance for inspection
-
-**Analytics:**
-- Inspection completion rate and time
-- Pre-existing damage frequency by vehicle age/model
-- AI accuracy metrics (damage detection precision/recall)
-- Correlation between thorough inspections and reduced disputes
-
-**Dependencies:**
-- Mobile App (inspection UI, photo capture)
-- Cloud Storage (photo upload, retention)
-- Vertex AI Vision API (damage detection)
-- Vehicle Status Manager (pre-existing damage records)
-- Rental Lifecycle Service (inspection completion validation)
-
-**Related ADRs:**
-- ADR-0003: Vertex AI as core platform for AI and GenAI (damage detection)
-- ADR-TBD: Photo retention policy (GDPR compliance, storage costs)
-- ADR-TBD: AI damage detection threshold tuning (accuracy vs customer friction)
+**Note:** FR-CV-025 (Vehicle Condition Inspection - Pre-Rental) has been moved to **Section 7: AI-Powered Features** as **FR-AI-003**.
 
 ---
 
@@ -604,7 +498,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 **AI Validation Criteria:**
 - Charger connection: Plug visible, properly inserted, no damage
 - Parking position: Vehicle within bay markings, not blocking adjacent spaces
-- Cleanliness: Assessed separately (see FR-CV-008)
+- Cleanliness: Assessed separately (see FR-AI-001: Vehicle Cleanliness Verification)
 
 **Business Rules:**
 - Wrong location fine: €50 (if outside designated bay but within city)
@@ -634,61 +528,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 
 ---
 
-### FR-CV-008: Vehicle Cleanliness Verification & Cleaning Fees
-**Business Goal:** Maintain brand quality, customer experience, operational efficiency
-
-**Description:** AI-powered cleanliness assessment from return photos with human verification before fee assessment.
-
-**Source:** Business Context - Vehicle Cleanliness Standards
-
-**Acceptance Criteria:**
-- [ ] Crew photographs vehicle before making available (baseline photos)
-- [ ] AI validates baseline cleanliness meets standards
-- [ ] Customer receives baseline photos at booking confirmation
-- [ ] At return: Customer submits photos (exterior, interior, trunk, seats)
-- [ ] AI compares return photos vs baseline for degradation
-- [ ] AI flags excessive mess: stains, trash, food debris, mud, damage
-- [ ] Flagged cases reviewed by operations team within 2 hours
-- [ ] If confirmed dirty: Cleaning fee charged, customer notified with evidence
-- [ ] Customer can dispute within 48 hours with counter-photos
-
-**AI Assessment Criteria:**
-- **Acceptable (No Fee):** Light dust, minor dirt, small marks, normal wear-and-tear
-- **Minor Mess (€50):** Moderate dirt, small stains, limited trash (< 3 items)
-- **Major Mess (€100):** Extensive dirt, large stains, significant trash, spills
-- **Severe Mess (€150):** Heavy soiling, odors (crew confirms), damage, bio-hazards
-
-**AI Confidence Thresholds:**
-- Confidence > 90%: Auto-assess (no human review if "Acceptable")
-- Confidence 70-90%: Human review required before fee
-- Confidence < 70%: Inconclusive, default to "Acceptable" (benefit of customer)
-
-**Business Rules:**
-- False positive target: <5% (to maintain customer trust)
-- Dispute resolution: Human review with photo comparison
-- Fee waiver: First offense for loyal customers (Gold tier)
-- Cleaning fee cap: €150 (severe cases beyond this → damage claim process)
-
-**Integration with Maintenance:**
-- AI-flagged vehicles → Priority cleaning dispatch
-- Periodic deep cleaning: Every 10 rentals or 14 days (whichever first)
-- Cleaning tasks batched with charger relocation for crew efficiency
-
-**Error Scenarios:**
-- AI system offline → Default to manual inspection (crew at next rental)
-- Customer disputes fee → Human review with full photo set
-- Ambiguous case (borderline) → Default to no fee, log for pattern analysis
-
-**Dependencies:**
-- AI Photo Analysis Service (Vertex AI Vision, custom trained model)
-- Crew Dispatch Service (cleaning task assignment)
-- Payment Service (cleaning fee charges)
-- Customer Dispute Resolution (manual review queue)
-
-**Related ADRs:**
-- ADR-TBD: AI model selection (Vertex AI Vision vs custom CNN)
-- ADR-TBD: Training data strategy and bias mitigation
-- ADR-TBD: Human-in-the-loop workflow design
+**Note:** FR-CV-008 (Vehicle Cleanliness Verification) has been moved to **Section 7: AI-Powered Features** as **FR-AI-001**.
 
 ---
 
@@ -791,7 +631,7 @@ Pre-Auth Amount = Max Possible Cost + Max Fines
 - **Rule:** AI-detected excessive mess at return inspection
 - **Calculation:** Minor (€50), Major (€100), Severe (€150)
 - **Cap:** €150
-- **Source:** FR-CV-008 (AI-based cleanliness inspection)
+- **Source:** FR-AI-001 (AI-based cleanliness inspection)
 - **Waiver:** Gold tier first offense waived
 
 **5. No-Show Fee:**
@@ -805,7 +645,7 @@ Pre-Auth Amount = Max Possible Cost + Max Fines
 - **Rule:** New damage detected at return inspection (not in pre-rental photos)
 - **Calculation:** Based on repair quote (varies)
 - **Cap:** Insurance deductible amount (typically €500-€1000)
-- **Source:** FR-CV-007 (Vehicle return & inspection), FR-CV-025 (Pre-rental inspection)
+- **Source:** FR-CV-007 (Vehicle return & inspection), FR-AI-003 (Pre-rental inspection)
 - **Waiver:** None (actual repair costs)
 
 **Consolidated Calculation Logic:**
@@ -1099,7 +939,7 @@ Rental Charges:
 - Inspection report submission: Photos, notes, ratings uploaded to cloud
 
 **3. Damage Assessment:**
-- View customer-submitted damage reports (from FR-CV-025)
+- View customer-submitted damage reports (from FR-AI-003: Pre-Rental Inspection)
 - Compare pre-rental vs post-rental photos side-by-side
 - Assess damage: Severity (minor/moderate/severe), repair cost estimate, photos
 - Approve or dispute customer damage claims
@@ -1534,41 +1374,7 @@ Rental Charges:
 
 ---
 
-## 7. Demand Forecasting Integration
-
-### FR-CV-017: Event Publishing for AI Demand Forecasting
-**Business Goal:** Improve vehicle positioning, reduce "not available" scenarios
-
-**Description:** Car/Van Rental context publishes domain events to AI Demand Forecasting system for utilization pattern analysis.
-
-**Source:** Business Context - Predictive Vehicle Positioning
-
-**Acceptance Criteria:**
-- [ ] System publishes events: Rental Started, Rental Ended, Booking Created, Booking Cancelled
-- [ ] Event payload includes: Vehicle ID, location, time, duration, customer tier, vehicle type
-- [ ] Events published to message bus (Pub/Sub, Kafka) for async consumption
-- [ ] Forecasting system consumes events, analyzes patterns (time, location, weather correlation)
-- [ ] Forecasting system provides predictions: Expected demand by location/time
-- [ ] Operations team uses predictions to proactively reposition vehicles
-
-**Business Rules:**
-- Event publishing: Near real-time (<10 second latency)
-- Guaranteed delivery: At-least-once semantics (idempotent consumers)
-- Event retention: 90 days in message bus
-
-**Forecasting Use Cases:**
-- Predict Monday 8am demand in financial district → Pre-position vehicles Sunday night
-- Identify underutilized vehicles → Suggest repositioning or pricing adjustments
-- Recurring user patterns → Reserve vehicles for standing reservations
-
-**Dependencies:**
-- Message Bus (GCP Pub/Sub or Kafka)
-- AI Demand Forecasting Service (consumer)
-- Event Schema Registry (schema evolution)
-
-**Related ADRs:**
-- ADR-TBD: Demand forecasting integration (batch vs streaming)
-- ADR-TBD: Event schema versioning strategy
+**Note:** FR-CV-017 (Event Publishing for AI Demand Forecasting) has been moved to **Section 7: AI-Powered Features** as **FR-AI-002**.
 
 ---
 
@@ -1832,6 +1638,266 @@ Rental Charges:
 
 ---
 
+## 7. AI-Powered Features
+
+### FR-AI-001: Vehicle Cleanliness Verification & Cleaning Fees
+**Business Goal:** Maintain brand quality, customer experience, operational efficiency
+
+**Description:** AI-powered cleanliness assessment from return photos with human verification before fee assessment.
+
+**Source:** Business Context - Vehicle Cleanliness Standards
+
+**Acceptance Criteria:**
+- [ ] Crew photographs vehicle before making available (baseline photos)
+- [ ] AI validates baseline cleanliness meets standards
+- [ ] Customer receives baseline photos at booking confirmation
+- [ ] At return: Customer submits photos (exterior, interior, trunk, seats)
+- [ ] AI compares return photos vs baseline for degradation
+- [ ] AI flags excessive mess: stains, trash, food debris, mud, damage
+- [ ] Flagged cases reviewed by operations team within 2 hours
+- [ ] If confirmed dirty: Cleaning fee charged, customer notified with evidence
+- [ ] Customer can dispute within 48 hours with counter-photos
+
+**AI Assessment Criteria:**
+- **Acceptable (No Fee):** Light dust, minor dirt, small marks, normal wear-and-tear
+- **Minor Mess (€50):** Moderate dirt, small stains, limited trash (< 3 items)
+- **Major Mess (€100):** Extensive dirt, large stains, significant trash, spills
+- **Severe Mess (€150):** Heavy soiling, odors (crew confirms), damage, bio-hazards
+
+**AI Confidence Thresholds:**
+- Confidence > 90%: Auto-assess (no human review if "Acceptable")
+- Confidence 70-90%: Human review required before fee
+- Confidence < 70%: Inconclusive, default to "Acceptable" (benefit of customer)
+
+**Business Rules:**
+- False positive target: <5% (to maintain customer trust)
+- Dispute resolution: Human review with photo comparison
+- Fee waiver: First offense for loyal customers (Gold tier)
+- Cleaning fee cap: €150 (severe cases beyond this → damage claim process)
+
+**Integration with Maintenance:**
+- AI-flagged vehicles → Priority cleaning dispatch
+- Periodic deep cleaning: Every 10 rentals or 14 days (whichever first)
+- Cleaning tasks batched with charger relocation for crew efficiency
+
+**Error Scenarios:**
+- AI system offline → Default to manual inspection (crew at next rental)
+- Customer disputes fee → Human review with full photo set
+- Ambiguous case (borderline) → Default to no fee, log for pattern analysis
+
+**Dependencies:**
+- AI Photo Analysis Service (Vertex AI Vision, custom trained model)
+- Crew Dispatch Service (cleaning task assignment)
+- Payment Service (cleaning fee charges)
+- Customer Dispute Resolution (manual review queue)
+
+**Related ADRs:**
+- ADR-0003: Vertex AI as core platform for AI and GenAI
+- ADR-TBD: AI model selection (Vertex AI Vision vs custom CNN)
+- ADR-TBD: Training data strategy and bias mitigation
+- ADR-TBD: Human-in-the-loop workflow design
+
+**Related NFRs:**
+- NFR-AI-001: AI Model Accuracy & Quality (cleanliness assessment)
+- NFR-AI-002: AI Model Performance & Latency
+- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR-AI-006: AI Explainability & Transparency
+- NFR-AI-008: AI System Fallback & Graceful Degradation
+
+---
+
+### FR-AI-002: AI Demand Forecasting & Vehicle Positioning
+**Business Goal:** Improve vehicle positioning, reduce "not available" scenarios
+
+**Description:** Car/Van Rental context publishes domain events to AI Demand Forecasting system for utilization pattern analysis.
+
+**Source:** Business Context - Predictive Vehicle Positioning
+
+**Acceptance Criteria:**
+- [ ] System publishes events: Rental Started, Rental Ended, Booking Created, Booking Cancelled
+- [ ] Event payload includes: Vehicle ID, location, time, duration, customer tier, vehicle type
+- [ ] Events published to message bus (Pub/Sub, Kafka) for async consumption
+- [ ] Forecasting system consumes events, analyzes patterns (time, location, weather correlation)
+- [ ] Forecasting system provides predictions: Expected demand by location/time
+- [ ] Operations team uses predictions to proactively reposition vehicles
+
+**Business Rules:**
+- Event publishing: Near real-time (<10 second latency)
+- Guaranteed delivery: At-least-once semantics (idempotent consumers)
+- Event retention: 90 days in message bus
+
+**Forecasting Use Cases:**
+- Predict Monday 8am demand in financial district → Pre-position vehicles Sunday night
+- Identify underutilized vehicles → Suggest repositioning or pricing adjustments
+- Recurring user patterns → Reserve vehicles for standing reservations
+
+**AI/ML Components:**
+- **Training Data:** Historical booking events, weather data, local events calendar, holiday schedules
+- **Features:** Time of day, day of week, location zone, vehicle type, customer tier, weather conditions
+- **Model Type:** Time series forecasting (ARIMA, Prophet, LSTM)
+- **Prediction Output:** Hourly demand forecast by location zone and vehicle type
+- **Model Retraining:** Weekly batch retraining with latest booking patterns
+- **Accuracy Target:** 75% accuracy within ±15% margin for 24-hour forecasts (NFR-AI-010)
+
+**Crew Repositioning Workflow:**
+- AI forecasts high demand in Zone A, low demand in Zone B
+- System suggests moving 3 vehicles from B to A before peak hours
+- Crew mobile app (FR-CV-027) shows repositioning tasks with priority
+- Crew executes relocation, system tracks completion
+- Post-analysis: Compare forecast vs actual demand, retrain if needed
+
+**Dependencies:**
+- Message Bus (GCP Pub/Sub or Kafka)
+- AI Demand Forecasting Service (Vertex AI Forecasting consumer)
+- Event Schema Registry (schema evolution)
+- Crew Mobile App (FR-CV-027) for repositioning tasks
+- Weather API (external data source)
+
+**Related ADRs:**
+- ADR-0003: Vertex AI as core platform for AI and GenAI
+- ADR-TBD: Demand forecasting integration (batch vs streaming)
+- ADR-TBD: Event schema versioning strategy
+- ADR-TBD: Forecasting model selection (time-series vs ML)
+
+**Related NFRs:**
+- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR-AI-004: AI Vendor Lock-In Mitigation
+- NFR-AI-010: Demand Forecasting Accuracy Requirements
+
+---
+
+### FR-AI-003: AI-Assisted Damage Detection (Pre-Rental Inspection)
+**Business Goal:** Customer protection, dispute prevention, damage accountability
+
+**Description:** Customer conducts mandatory vehicle condition inspection before starting rental using mobile app with AI-assisted damage detection to document pre-existing damage.
+
+**Source:** Operational best practice - Standard rental industry practice, prevents false damage claims
+
+**Acceptance Criteria:**
+- [ ] Mobile app guides customer through inspection checklist before first use
+- [ ] Customer takes photos of vehicle exterior (4 sides + roof if accessible)
+- [ ] Photos uploaded to cloud storage with timestamp and GPS coordinates
+- [ ] Interior inspection: Cleanliness check, seats, dashboard, cargo area
+- [ ] Customer confirms: "Vehicle condition documented and acceptable"
+- [ ] Pre-existing damage marked on digital vehicle diagram
+- [ ] Inspection must be completed before rental session starts (vehicle stays locked until inspection done)
+- [ ] Inspection report linked to rental session for return comparison
+- [ ] Customer receives inspection summary via email
+
+**Inspection Checklist:**
+
+**Exterior Inspection:**
+- [ ] Front bumper and hood (dents, scratches, paint damage)
+- [ ] Driver side (doors, mirrors, windows)
+- [ ] Rear bumper and trunk/cargo door
+- [ ] Passenger side (doors, mirrors, windows)
+- [ ] Wheels and tires (visible damage, pressure indicators)
+- [ ] Lights (headlights, taillights, turn signals functional)
+- [ ] Windshield (cracks, chips)
+- [ ] Roof (if accessible, van skylights)
+
+**Interior Inspection:**
+- [ ] Seats (stains, tears, burns)
+- [ ] Dashboard and controls (damage, missing items)
+- [ ] Cargo area (clean, odor-free, dry)
+- [ ] Floor mats and carpets (stains, wear)
+- [ ] Seatbelts (functional, clean)
+- [ ] Special equipment (child seat, bike rack if applicable)
+
+**Photo Requirements:**
+- Minimum 4 photos (front, back, left, right angles)
+- Recommended 8+ photos for comprehensive documentation
+- Photo quality: Minimum 1280x720 resolution
+- Photos must show vehicle VIN or license plate for verification
+- Timestamp and GPS embedded in EXIF metadata
+- AI pre-processing: Blur detection (reject blurry photos), lighting validation
+
+**Pre-Existing Damage Documentation:**
+- Customer taps on digital vehicle diagram to mark damage locations
+- For each marked area: Category (scratch/dent/crack/stain), severity (minor/moderate/severe), photo reference
+- Damage visible in previous rental returns: Auto-suggested by system
+- Operations team review: Damage reports validated within 1 hour (crew checks)
+
+**Business Rules:**
+- Inspection mandatory for first-time customers and new vehicle assignments
+- Habitual users (5+ rentals): Optional quick inspection (express mode)
+- Express mode: AI compares current photos with last inspection, flags changes
+- Inspection timeout: 10 minutes to complete, or auto-prompt for assistance
+- Skip option: Only if customer accepts liability for all pre-existing damage (not recommended)
+- Operations override: Crew can mark vehicle as "pre-inspected" if just cleaned/checked
+
+**AI-Assisted Damage Detection:**
+- Vertex AI Vision analyzes uploaded photos for visible damage
+- AI flags potential damage: "Possible dent detected on driver door, please review"
+- Customer confirms or dismisses AI findings
+- AI training: Learns from customer confirmations and return inspections
+- Target accuracy: 80% damage detection rate, <10% false positive rate
+
+**AI Model Specifications:**
+- **Training Data:** Vehicle damage images (dents, scratches, cracks) from various angles, lighting conditions
+- **Model Architecture:** Vertex AI Vision AutoML or custom object detection (YOLO, Faster R-CNN)
+- **Damage Categories:** Scratch, dent, crack, paint chip, broken glass, tire damage, body panel misalignment
+- **Confidence Thresholds:**
+  - High confidence (>85%): Auto-flag, notify customer immediately
+  - Medium confidence (70-85%): Suggest customer review, highlight region
+  - Low confidence (<70%): No auto-flag, log for model improvement
+- **Real-time Inference:** Process photo within 5 seconds of upload
+- **Batch Processing:** Compare pre-rental vs return photos to detect new damage
+
+**Customer Protection:**
+- Inspection report is legal protection against false damage claims
+- Return comparison: New damage identified by comparing pre/post photos
+- Burden of proof: If damage not in pre-rental inspection, customer may be liable
+- Dispute process: Customer can contest damage claims with inspection evidence
+
+**Integration with Return Process (FR-CV-007):**
+- Return inspection compares current state with pre-rental inspection
+- AI identifies new damage by analyzing photo differences
+- Damage assessment workflow triggered if discrepancies detected
+- Links to dispute resolution (FR-CV-020) if customer contests damage charges
+
+**Error Scenarios:**
+- Photo upload fails → Allow offline storage, sync when connectivity restored
+- AI service unavailable → Manual inspection only, no AI suggestions
+- Customer skips inspection → Liability warning shown, acceptance logged
+- Vehicle already has extensive damage → Operations team notified, vehicle may be removed from fleet
+
+**Accessibility Considerations:**
+- Voice guidance for visually impaired customers
+- Haptic feedback for photo capture confirmation
+- High contrast mode for damage diagram marking
+- Option to request crew assistance for inspection
+
+**Analytics:**
+- Inspection completion rate and time
+- Pre-existing damage frequency by vehicle age/model
+- AI accuracy metrics (damage detection precision/recall)
+- Correlation between thorough inspections and reduced disputes
+- False positive/negative rates by damage type
+
+**Dependencies:**
+- Mobile App (inspection UI, photo capture)
+- Cloud Storage (photo upload, retention)
+- Vertex AI Vision API (damage detection)
+- Vehicle Status Manager (pre-existing damage records)
+- Rental Lifecycle Service (inspection completion validation)
+
+**Related ADRs:**
+- ADR-0003: Vertex AI as core platform for AI and GenAI (damage detection)
+- ADR-TBD: Photo retention policy (GDPR compliance, storage costs)
+- ADR-TBD: AI damage detection threshold tuning (accuracy vs customer friction)
+- ADR-TBD: Damage detection model architecture (AutoML vs custom)
+
+**Related NFRs:**
+- NFR-AI-001: AI Model Accuracy & Quality (damage detection)
+- NFR-AI-002: AI Model Performance & Latency
+- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR-AI-007: AI Training Data Quality & Bias Prevention
+- NFR-AI-008: AI System Fallback & Graceful Degradation
+- NFR-AI-009: AI Security & Adversarial Robustness
+
+---
+
 ## 8. Data Model Summary
 
 **Core Entities** (detailed schemas in `4_Domain_Model.md`):
@@ -1884,52 +1950,69 @@ Rental Charges:
 
 | Requirement | Requirement Name | Business Goal | Transcript Source | ADR Reference |
 |-------------|------------------|---------------|-------------------|---------------|
+| **Booking & Reservation Management** |
 | FR-CV-001 | Advanced Booking with Charge Sufficiency | Customer Satisfaction | Q&A: "Won't let people book unless enough charge" | ADR-TBD |
 | FR-CV-002 | Recurring/Standing Reservations | Habitual Usage | Business Challenge: "Use service in ad hoc way" | - |
 | FR-CV-003 | Quick Rebooking & Favorites | Reduce Friction | Business Context | - |
 | FR-CV-004 | Booking Extension with Conflict Checking | Flexibility | Q&A: "Can ask to extend bookings" | - |
 | FR-CV-018 | Reservation Cancellation & Refunds | Customer Flexibility | Q&A: "Customers can cancel... without penalty" | ADR-TBD |
-| FR-CV-019 | GDPR Compliance & Data Privacy | Regulatory Compliance | EU operations requirement | ADR-TBD |
-| FR-CV-020 | Dispute Resolution Workflow | Customer Trust | Operational requirement | ADR-TBD |
-| FR-CV-021 | Payment Method Management | Payment Security | Operational requirement | ADR-TBD |
-| FR-CV-022 | Late/No-Show Fee Processing | Revenue Protection | Operational requirement | ADR-TBD |
-| FR-CV-023 | Multi-Language & Multi-Currency Support | EU Market Expansion | Q&A: "Multiple languages and currencies" | ADR-TBD |
 | FR-CV-024 | Booking Modification (Pre-Rental) | Customer Flexibility | Operational best practice | ADR-TBD |
-| FR-CV-025 | Vehicle Condition Inspection (Pre-Rental) | Dispute Prevention | Operational best practice | ADR-TBD |
-| FR-CV-026 | Vehicle Maintenance Status Tracking | Fleet Reliability | Operational requirement | ADR-TBD |
-| FR-CV-027 | Crew Mobile App Requirements | Operational Efficiency | Operational requirement | ADR-TBD |
-| FR-CV-028 | Fine Calculation Engine (Consolidated) | Consistent Policy | Operational requirement | ADR-TBD |
+| **Vehicle Access & Lifecycle** |
 | FR-CV-005 | Dual Access Control (Phone NFC + Remote) | Reliable Access | Transcript: "NFC capable... API to unlock" | ADR-TBD |
 | FR-CV-006 | Cross-Border with Origin City Return | Fleet Balance | Q&A: "Return to origin city" | - |
+| FR-CV-022 | Late/No-Show Fee Processing | Revenue Protection | Operational requirement | ADR-TBD |
+| **Return Verification & Condition Assessment** |
 | FR-CV-007 | Return Verification (Parking + Charger + Photos) | Return Compliance | Transcript: "Photo as proof... plugged in" | ADR-TBD |
-| FR-CV-008 | Vehicle Cleanliness Verification & Fees | Brand Quality | Business Context: Cleanliness | ADR-TBD |
+| **Payment & Pricing** |
 | FR-CV-009 | Per-Minute Billing with Pre-Authorization | Payment Security | Q&A: "Pre-authorization... actual usage" | ADR-TBD |
 | FR-CV-010 | Volume-Based Pricing & Loyalty Tiers | Revenue Growth | Business Goal: Habitual usage | - |
 | FR-CV-011 | Corporate Account Management | B2B Revenue | Business Context: Corporate accounts | - |
+| FR-CV-021 | Payment Method Management | Payment Security | Operational requirement | ADR-TBD |
+| FR-CV-028 | Fine Calculation Engine (Consolidated) | Consistent Policy | Operational requirement | ADR-TBD |
+| **Compliance & Customer Rights** |
+| FR-CV-019 | GDPR Compliance & Data Privacy | Regulatory Compliance | EU operations requirement | ADR-TBD |
+| FR-CV-020 | Dispute Resolution Workflow | Customer Trust | Operational requirement | ADR-TBD |
+| FR-CV-023 | Multi-Language & Multi-Currency Support | EU Market Expansion | Q&A: "Multiple languages and currencies" | ADR-TBD |
+| **Telemetry & Monitoring** |
 | FR-CV-012 | Real-Time Telemetry Tracking | Fleet Visibility | Q&A: "GPS trackers... 30 seconds" | ADR-TBD |
 | FR-CV-013 | Partner Charging Location Integration | Range Support | Q&A: "Partner locations... top up charge" | - |
 | FR-CV-014 | Charger Blocking Fine Avoidance & Crew Dispatch | Cost Optimization | Business Context: Blocking fines | - |
+| **Operations & Maintenance** |
 | FR-CV-015 | Roadside Assistance Dispatch | Customer Support | Q&A: "Roadside recovery service" | - |
 | FR-CV-016 | Remote Vehicle Disable | Security | Transcript: "Can disable remotely" | ADR-TBD |
-| FR-CV-017 | Event Publishing for AI Demand Forecasting | Vehicle Positioning | Business Challenge: "Forecast demand" | ADR-TBD |
+| FR-CV-026 | Vehicle Maintenance Status Tracking | Fleet Reliability | Operational requirement | ADR-TBD |
+| FR-CV-027 | Crew Mobile App Requirements | Operational Efficiency | Operational requirement | ADR-TBD |
+| **AI-Powered Features** | | | | |
+| **FR-AI-001** | **Vehicle Cleanliness Verification & Fees** | **Brand Quality & Efficiency** | **Business Context: Cleanliness** | **ADR-0003, ADR-TBD** |
+| **FR-AI-002** | **AI Demand Forecasting & Vehicle Positioning** | **Vehicle Positioning** | **Business Challenge: "Forecast demand"** | **ADR-0003, ADR-TBD** |
+| **FR-AI-003** | **AI-Assisted Damage Detection (Pre-Rental)** | **Dispute Prevention** | **Operational best practice** | **ADR-0003, ADR-TBD** |
+
+**Note:** FR-CV-008, FR-CV-017, and FR-CV-025 have been renumbered as FR-AI-001, FR-AI-002, and FR-AI-003 respectively and moved to the AI-Powered Features section.
 
 ---
 
-## Summary for Judges
+## Summary
 
 This functional requirements document demonstrates:
 
 1. **Clear Traceability:** Every requirement maps to business goals and transcript quotes
-2. **Thoughtful AI Integration:** AI used for photo verification, cleanliness assessment, demand forecasting (where appropriate)
-3. **Trade-Off Awareness:** Human-in-the-loop for AI decisions, fallback mechanisms
+2. **Thoughtful AI Integration:** AI features explicitly separated (FR-AI-XXX) for clarity - cleanliness verification, damage detection, demand forecasting
+3. **Trade-Off Awareness:** Human-in-the-loop for AI decisions, fallback mechanisms, confidence thresholds
 4. **Operational Realism:** Crew dispatch optimization, partner integration, corporate accounts
 5. **Customer-Centric:** Habitual usage features, transparent pricing, dispute resolution
 6. **Bounded Context Clarity:** Clear separation from bike/scooter rental, well-defined integration points
 7. **Architectural Implications:** Data models, ADR references, technical requirements included
+8. **AI Governance:** Dedicated section for AI features with explicit accuracy targets, monitoring requirements, and ethical considerations
 
 **Key Differentiators:**
+- **AI-Powered Excellence:** Three distinct AI capabilities (FR-AI-001, FR-AI-002, FR-AI-003) with measurable success criteria
 - Charge sufficiency validation prevents customer dissatisfaction
 - Cleanliness AI with <5% false positive target maintains trust
+- Damage detection AI reduces disputes and protects both customer and company
 - Charger blocking fine avoidance demonstrates operational sophistication
 - Corporate accounts open B2B revenue stream
-- Predictive positioning leverages AI for business value
+- Predictive positioning leverages AI for business value (75% forecast accuracy target)
+
+**Total Requirements: 28**
+- Core Requirements (FR-CV-XXX): 25 requirements
+- AI-Powered Features (FR-AI-XXX): 3 requirements
