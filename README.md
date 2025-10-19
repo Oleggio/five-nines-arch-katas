@@ -7,8 +7,8 @@
 ## 🧭 Table of Contents
 
 - [Overview](#-overview)
-  - [About the Project](#-about-the-project)
-  - [Team](#-team)
+  - [About the Project](#about-the-project)
+  - [Team](#team)
 - [Objectives](#-objectives)
 - [Repository Structure](#-repository-structure)
 - [How to Review](#-how-to-review)
@@ -27,11 +27,11 @@ The aim is to provide **transparency, traceability, and clarity** for reviewers 
 
 ---
 
-### 👨‍💻 About the Project
+### About the Project
 
 This project is intended to help MobilityCorp achieve its business goals and address its biggest business challenges by offering the most optimal technology stack and architectural solution. The company's goals are: increase sales and revenue, expand market coverage, improve user experience, strengthen its market position. **Objectives** of the current project will serve as key enablers for these goals. 
 
-### 👨‍💻 Team
+### Team
 
 The project was prepared by the team called 'Five Nines' consisting of:
 
@@ -42,7 +42,7 @@ The project was prepared by the team called 'Five Nines' consisting of:
 - **[Bo Connolly](https://www.linkedin.com/in/boconnolly/)** - DevOps
 
 
-## 🎯 Objectives
+## Objectives
 
 Design from scratch (green field architecture) functionality for:
 - **User Dialogue** - enhanced sales via user-personalized companionship, adaptive route/experience/pricing/charging advise, and driving compliance guidance
