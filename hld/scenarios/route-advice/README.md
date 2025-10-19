@@ -2,13 +2,13 @@
 # AI-enhanced Route Advice System
 ## Overview
 The goal of the system is to provide route/experience advice to user based on their needs, fleet availability and weather conditions.
-This should help us achive the following business goals
+This should help us achieve the following business goals
 * Revenue growth 
-* Customer satisfaction increase
+* Increase in customer satisfaction
 
 ## Container View
 
-* `Route Recommendation Service` gets route information from the user, including start and end location and and a message describing what they would like to see along the route.
+* `Route Recommendation Service` gets route information from the user, including start and end location and a message describing what they would like to see along the route.
 The service is responsible for aggregating all information required to generate route recommendations:
   * Based on the route's starting point and destination, it retrieves interesting locations along the way. In the future, this could be enhanced to suggest locations based on the user's past preferences.
   * It retrieves weather information to adjust the estimated ride duration accordingly.
