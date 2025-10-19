@@ -56,5 +56,38 @@ The engine will expose APIs to:
   Simplifies training and operations but increases latency and dependency on connectivity.  
   *Rejected* — unacceptable in offline-prone or high-demand areas.
 
+## Challenges/Trade-offs
+
+- **Latency vs. Infrastructure Complexity**
+ 
+ text
+  
+- **Scalability vs. Local Resource Constraints**
+
+ text
+ 
+  
+- **Data Synchronization & Consistency**
+
+ text
+ 
+  
+- **Operational Overhead**
+
+ text
+ 
+  
+- **Security, Privacy & Compliance**
+
+ text
+ 
+
+> Additional **MCP Trade-offs to watch**
+> - Eventual consistency: brief windows where different edges run different versions—mitigate with region-scoped rollouts.
+> - Cold start vs. footprint: more cached variants reduce cold starts but increase storage.
+> - Telemetry lag: decisions in MCP rely on timely edge metrics; buffer + backfill when offline.
+
 ## Conclusion
-We will deploy a **hybrid AI route optimization service** leveraging ML for personalization, RL for continuous improvement, and rule-based logic for safety and compliance. The system will initially integrate with Google Maps for baseline route data and progressively transition to in-house predictive models. Edge caching will ensure responsiveness. The design supports modular extension for future contexts such as energy consumption and CO₂ optimization.
+We will deploy a **hybrid AI route optimization service** leveraging ML for personalization, RL for continuous improvement, and rule-based logic for safety and compliance. The system will initially integrate with Google Maps for baseline route data and progressively transition to in-house predictive models. 
+To ensure governance, traceability, and safe rollout of models, we will apply a cloud-based Model Control Plane (MCP) — managing model versions, deployment policies, telemetry, and automated rollback in case of degradation. This enables consistent control of model lifecycles across both cloud and edge environments, ensuring reliability and compliance throughout continuous updates.
+Edge caching will ensure responsiveness. The design supports modular extension for future contexts such as energy consumption.
