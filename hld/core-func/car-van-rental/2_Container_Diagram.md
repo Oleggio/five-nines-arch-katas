@@ -5,42 +5,7 @@
 Shows the internal containers (services, databases) within the Car/Van Rental system.
 
 ## Diagram
-```mermaid
-C4Container
-    title Container Diagram - Car/Van Rental System
-
-    Person(customer, "Customer")
-    Person(crew, "Operations Crew")
-    
-    System_Boundary(rental, "Car/Van Rental System") {
-        Container(api_gateway, "API Gateway", "Cloud Run", "Routes requests, auth")
-        Container(booking_svc, "Booking Service", "Cloud Run", "Reservation logic")
-        Container(rental_svc, "Rental Lifecycle Service", "Cloud Run", "Unlock, extend, return")
-        Container(telemetry_svc, "Telemetry Ingestion", "Dataflow", "Processes GPS/sensor data")
-        Container(payment_calc, "Payment Calculator", "Cloud Run", "Billing & fines")
-        
-        ContainerDb(postgres, "Reservation DB", "PostgreSQL", "Bookings & rentals")
-        ContainerDb(timescale, "Telemetry DB", "TimescaleDB", "Time-series vehicle data")
-        ContainerDb(cache, "Session Cache", "Redis", "Active rental state")
-        
-        Container(event_bus, "Event Bus", "Pub/Sub", "Domain events")
-    }
-    
-    System_Ext(payment_gw, "Payment Gateway")
-    System_Ext(iot, "Vehicle IoT")
-    
-    Rel(customer, api_gateway, "HTTPS")
-    Rel(api_gateway, booking_svc, "gRPC")
-    Rel(api_gateway, rental_svc, "gRPC")
-    Rel(booking_svc, postgres, "SQL")
-    Rel(rental_svc, postgres, "SQL")
-    Rel(rental_svc, cache, "Redis protocol")
-    Rel(iot, telemetry_svc, "MQTT → Pub/Sub")
-    Rel(telemetry_svc, timescale, "SQL")
-    Rel(payment_calc, payment_gw, "HTTPS")
-    Rel(booking_svc, event_bus, "Publishes ReservationCreated")
-    Rel(rental_svc, event_bus, "Publishes RentalCompleted")
-```
+![alt text](diagrams/container_diagram.png)
 
 ## Container Responsibilities
 Booking Service
