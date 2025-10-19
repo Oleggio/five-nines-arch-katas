@@ -16,4 +16,4 @@ The service is responsible for aggregating all information required to generate 
 * `Vertex AI` acts as a facade for the large language model. It receives all aggregated route information as a prompt and 
 generates a personalized route proposal for a user.
 
-![Diagram](route-advice/Scooter_Bike%20Route%20Recommendation.drawio.png)
+![Diagram](Scooter_Bike%20Route%20Recommendation.drawio.png)
