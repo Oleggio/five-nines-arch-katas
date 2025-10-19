@@ -1,12 +1,10 @@
 # Non-Functional Requirements
 
-1. **Reliability**:
-2. **Scalability**:
-3. **Performance**: 
-4. **Availability**: 99.9%
-5. **Security**: Protecting user sensitive and financial data, GPS tracking data
-6. **Localization**: Multiple languages support (EU only)
-7. **Expandability**: Fast time to new market/location
-8. **Compliance**: GDPR compliance for user PII data; legal compliance related to driving on a territory such as speed limit, driving license, etc., company licenses compliance for a location.
-9. **AI Maintainability**: MLops
-
+- 📊 **Scalability:** handle growing fleet and user base across multiple regions.  
+- 🧱 **Reliability:** 99.9% uptime target for critical services.
+- 🪫 **Performance:** low-latency booking and GPS updates. 
+- 🔐 **Security:** encrypted transactions and PII protection.
+- 🗺️ **Expandability**: Fast time to new market/location.
+- 🌍 **Localization:** multi-language support across EU markets.  
+- ⚖️ **Compliance:** GDPR, regional mobility laws, speed limits, local EV rules, license limitations. AI regulatory compliance.
+- 🧪 **AI Model Monitoring:** MLops, ability to detect and react to model drift or provider outages.
