@@ -11,4 +11,8 @@
 ## Alternatives Considered
 - **Alternative_1**: {explanation}
 
+## Risks & Trade-offs
+| Risk Area | Description | Mitigation |
+|--|--|--|
+
 ## Conclusion
