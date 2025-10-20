@@ -23,5 +23,17 @@ Vertex AI enables models to consume real-time telemetry and Maps data directly, 
 - **Azure AI Foundry + Azure Maps** lacks direct mapping integration, requires custom orchestration for GenAI workflows.  
 - **Custom open-source stack:** more flexibility, but high operational overhead and slower time-to-market.
 
+## Risks & Trade-offs
+| Risk Area | Description | Mitigation |
+|--|--|--|
+| Vendor lock-in                   | Heavy reliance on Vertex AI’s managed stack and Maps integration may make migration costly or complex.             | Keep model artifacts portable; design APIs and orchestration to allow future abstraction or hybrid setups.  |
+| Cost control                     | Managed training, inference, and GenAI workloads can scale unpredictably with increased fleet size or usage.       | Implement budget alerts, quota controls, and usage dashboards; prioritize efficient model architectures.    |
+| Feature dependency               | Tight coupling to Vertex AI features (function calling, prompt orchestration, model hosting) can limit flexibility. | Use modular workflows where possible; document fallback or alternative service strategies.                   |
+| Model governance & compliance    | Using a managed GenAI platform introduces dependency on vendor data handling policies and governance frameworks.   | Define clear data governance boundaries; use private endpoints and explicit data retention settings.         |
+| Latency for critical operations  | GenAI workflows can introduce additional latency compared to pure predictive models.                               | Use hybrid approach: combine deterministic routing models with GenAI orchestration for conversational logic. |
+| Security & access control        | Broader AI service surface increases attack vectors and misconfiguration risks.                                    | Enforce strict IAM, secret management, and service isolation; follow least-privilege principles.             |
+| Skills & adoption                | Vertex AI GenAI features may be less familiar to the current engineering team.                                     | Provide training, reference architectures, and pre-built templates.                                          |
+| Ecosystem flexibility            | Integration with non-Google services may be limited or require custom adapters.                                    | Standardize external tool integration through well-defined APIs and service gateways.                        |
+
 ## Conclusion
 Vertex AI provides a unique combination of geospatial intelligence, GenAI orchestration, and managed AI lifecycle, making it the most effective and low-friction platform for this mobility solution.
