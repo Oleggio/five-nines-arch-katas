@@ -24,7 +24,19 @@ We choose **Google Cloud Platform (GCP)** as the core cloud provider.
 
 ## Alternatives Considered
 - **AWS**: Strong compute and storage, but requires third-party mapping integration; heavier ML setup.  
-- **Azure**: Enterprise-friendly, but mapping and real-time fleet analytics require more custom work.  
+- **Azure**: Enterprise-friendly, but mapping and real-time fleet analytics require more custom work.
+
+## Risks & Trade-offs
+
+| Risk Area | Description | Mitigation |
+|--|--|--|
+| Vendor lock-in                   | Heavy reliance on GCP location and AI services may make migration costly or complex.                        | Use abstraction layers for critical services where feasible; document fallback options.          |
+| Feature dependency               | Dependence on specific GCP features (Gemini, Vertex AI) may limit flexibility if APIs change or pricing shifts. | Maintain minimal viable integration surface; monitor vendor updates; design fallback pathways.   |
+| Cost predictability              | High-volume Pub/Sub, BigQuery, and Maps usage can lead to unpredictable costs.                              | Implement cost alerts, quota management, and optimize ingestion pipelines early.                 |
+| Regional availability            | GCP services may have latency or compliance limitations in some markets.                                    | Deploy regionally and use multi-region architecture for redundancy.                             |
+| Skills & ecosystem               | GCP ecosystem may be less familiar to new hires compared to AWS or Azure.                                   | Training plan, standardized infrastructure templates, and internal documentation.                |
+| Integration flexibility          | Tightly coupled stack may be less flexible when adding non-Google services.                                 | Keep messaging and storage layers as portable as possible; avoid unnecessary hard coupling.      |
+
 
 ## Competitors
 Some of the direct competitors leverage GCP that confirms it as a proven technology stack
