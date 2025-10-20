@@ -41,6 +41,18 @@ Gemini will be used as a reasoning and orchestration layer, while Maps Platform 
 | In-house NER + search              | Full control                                       | High cost, limited coverage, lower accuracy               |
 | Gemini + Maps grounding (Chosen)   | Native integration, minimal glue code, smart logic | Vendor lock-in, dependency on service availability        |
 
+## Risks & Trade-offs
+| Risk Area | Description | Mitigation |
+|--|--|--|
+| Vendor lock-in                   | Strong dependency on Gemini and Maps grounding may make migration difficult.                             | Use abstraction layers for geospatial and conversational APIs; document fallback to traditional Maps APIs.  |
+| Service availability             | Outages or changes to Gemini APIs could impact search and routing features.                              | Implement fallback paths to traditional Maps APIs for critical operations.                                  |
+| Cost management                  | High query volumes for conversational and geospatial search may lead to unpredictable API costs.          | Define usage quotas, implement caching for repeated queries, and monitor cost dashboards.                   |
+| Latency sensitivity              | Conversational queries can introduce additional latency compared to direct Maps API calls.                | Use hybrid architecture: direct API for time-critical routing, Gemini for contextual enhancements.          |
+| Feature dependency               | Heavy reliance on Gemini orchestration features may reduce flexibility if APIs change.                    | Keep orchestration logic modular; monitor vendor roadmap and prepare adaptation plans.                      |
+| Data governance & compliance     | Using AI-assisted search introduces questions around data handling, logging, and auditability.            | Configure access controls, log usage, and enforce compliance with internal and external regulations.         |
+| Skills gap                       | Teams may be less familiar with Gemini capabilities and grounding concepts.                              | Provide training, create internal documentation, and offer reference integrations.                          |
+| Ecosystem integration            | Tightly coupling to Gemini may limit future integration with other mapping or search providers.           | Maintain clear separation between conversational layer and routing layer in architecture.                   |
+
 ## Conclusion
 Gemini aligns best with our goals for conversational, context-aware, map-grounded interactions with minimal integration effort. Traditional Maps APIs will be retained as fallback.
 
