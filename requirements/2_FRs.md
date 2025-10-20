@@ -7,7 +7,7 @@
 |Area of application | Functional requirements| Data input| Data output | Tech Choice | Comments| 
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |User Dialogue| User-personalized in-app companionship (chatbot UI with guided chat flow)| Free text from user in chat or pressing a predefined chat button | Text/link answer in chat | Hybrid (GenAI, ML, Code) | Risk of overspending by using GenAI. We will only use for non-predefined questions. |
-|User Dialogue| Adaptive route/experience advice for route calculation to user, guiding tips during ride | Free text from user in chat or pressing a predefined chat button| start point, destination, weather, sightseeings, user patterns, duration, price) | MCP | Optional functionality, only if user wants a route. | 
+|User Dialogue| Adaptive route/experience advice for route calculation to user, guiding tips during ride | Free text from user in chat or pressing a predefined chat button| start point, destination, weather, sightseeings, user patterns, duration, price | MCP | Optional functionality, only if user wants a route. | 
 |User Dialogue| Pricing advice to user | Free text from user in chat or pressing a predefined chat button | Text/link answer in chat | Code| Based on Dynamic Pricing functionality |
 |User Dialogue| Charging advice to user | (Triggered during route calculation or just from battery level during riding) GPS tracker info, battery sensor info, map | Text recommendation: change route, park or charge on a suggested location(s) | Code, ML| ML only for charging locations & their availability, and traffic conditions |
 |User Dialogue| Feedback loop dialogue & user support | Free text from user in chat or pressing a predefined chat button | Text/link answer in chat | Code, ML| Many predefined F.A.Q.|
