@@ -45,7 +45,7 @@
 - Real-time reservation events (streaming: Pub/Sub)
 
 **API Endpoint:** `GET /api/bookings/analytics`  
-**Schema:** See `hld/core-functionality/car-van-rental/6_Data_Models.md#AnalyticsExport`
+**Schema:** To be defined in detailed API design phase
 
 ---
 
