@@ -29,7 +29,7 @@ The engine will expose APIs to:
 
 ## Key Differentiators
 - **Personalization**  
-  Uses contextual and behavioral data to tailor the route experience — e.g., “fastest under rain” vs. “most scenic on weekends.”
+  Uses contextual and behavioral data to tailor the route experience — e.g., “fastest during wind/storm”, "having covered stops on the way (due to rain)" vs. “most scenic on weekends.”
 
 - **Weather-Aware Routing**  
   Adjusts route recommendations dynamically based on precipitation, temperature, and visibility thresholds. Special routing for rain/wind conditions.
@@ -62,7 +62,7 @@ The engine will expose APIs to:
 ## Risks & Trade-offs
 
 | Risk Area | Description | Mitigation |
-|-----------|-------------|-------------|
+|--|--|--|
 | **Latency** | Cloud inference may add small delay for real-time recalculations. | Optimize request batching, use CDN and regional compute zones. |
 | **Scalability** | Sudden spikes in usage may impact response time. | Auto-scaling of compute clusters and caching of frequent routes. |
 | **Data Consistency** | Model versions and datasets must remain synchronized across environments. | Governed by MCP for version control and rollback automation. |
@@ -81,4 +81,4 @@ We will deploy a **hybrid AI route optimization service** leveraging ML for pers
 
 To ensure governance, traceability, and safe rollout of models, we will apply a **cloud-based Model Control Plane (MCP)** — managing model versions, deployment policies, telemetry, and automated rollback in case of degradation. This provides full control of model lifecycles within the cloud environment, ensuring reliability and compliance during continuous updates.  
 
-The design supports modular extension for future contexts such as energy consumption, CO₂ optimization, and conversational GenAI-driven user assistance.
+The design supports modular extension for future contexts such as energy consumption and conversational GenAI-driven user assistance.
