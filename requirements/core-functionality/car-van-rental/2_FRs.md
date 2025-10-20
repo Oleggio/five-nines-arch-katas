@@ -6,13 +6,13 @@ This document details functional requirements for the Car/Van Rental bounded con
 **Related Documents:**
 - Business Context: `1_Business_Context.md`
 - Non-Functional Requirements: `3_NFRs.md`
-- Domain Model: `4_Domain_Model.md` (detailed entity schemas and relationships)
+- Domain Model: `4_Domain_Model.md` (ubiquitous language, aggregates, domain events)
 - Integration Requirements: `5_Integration_Requirements.md`
 
 **Note:** 
-- Detailed data models (JSON schemas) are maintained in `4_Domain_Model.md`
 - Sequence diagrams and component diagrams are maintained in the `/hld/` (High-Level Design) folder
 - This document focuses on functional requirements with business context and acceptance criteria
+- Detailed data models and JSON schemas are yet to be defined in future design phases
 
 ---
 
@@ -1900,7 +1900,7 @@ Rental Charges:
 
 ## 8. Data Model Summary
 
-**Core Entities** (detailed schemas in `4_Domain_Model.md`):
+**Core Entities** (conceptual overview - detailed schemas to be defined):
 - **Reservation:** Booking details, pre-auth, customer, vehicle, time window, recurring patterns
 - **Rental:** Active usage session, billing accumulator, telemetry reference
 - **Vehicle Status:** Availability, location, charge/range, cleanliness flags, maintenance state
@@ -1913,7 +1913,7 @@ Rental Charges:
 - **Cleanliness Assessment:** Baseline/return photos, AI analysis, human review, fees
 - **Crew Task:** Dispatch queue, task type (relocation/cleaning), route optimization
 
-**Note:** Complete JSON schemas with field definitions, validation rules, and relationships are documented in `4_Domain_Model.md`
+**Note:** See `4_Domain_Model.md` for ubiquitous language and aggregate boundaries. Detailed JSON schemas with field definitions, validation rules, and relationships will be defined in subsequent design phases.
 
 ---
 
