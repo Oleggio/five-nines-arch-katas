@@ -26,7 +26,7 @@ Gemini will be used as a reasoning and orchestration layer, while Maps Platform 
 - Results rely on up-to-date Maps data.  
 - Single provider simplifies security and scaling.
 
-- **Considerations**  
+## Considerations
 - **Architecture:** Gemini becomes part of the conversational and routing layer.  
 - **Integration:** Gemini APIs are called from backend services; results are enriched with operational context (fleet, users, availability).  
 - **Security:** IAM, service accounts, and quota controls required.  
