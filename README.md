@@ -76,6 +76,7 @@ _This is a living document. It will evolve as the kata progresses._
 ## ⚙️ Technology Stack Overview
 | Layer                          | Services / Components                                                                                                                   |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Platform / Cloud Provider        | Google Cloud (GCP)                                                                                                                       |
 | Edge & Connectivity             | MQTT Gateway (GKE), Device Firmware SDK                                                                                                  |
 | Ingestion & Messaging           | Pub/Sub                                                                                                                                  |
 | Processing & Integration        | Dataflow, Eventarc, Protocol Adapters / Enrichers                                                                                        |
@@ -84,5 +85,6 @@ _This is a living document. It will evolve as the kata progresses._
 | Application Layer               | Cloud Run, API Gateway, Identity Platform, Business Services (Pricing, Trips, Ops)                                                       |
 | Geospatial & Mobility           | Google Maps Platform (Routes, Places, Geocoding, Traffic)                                                                                |
 | Security & IAM                  | Cloud IAM, Secret Manager, Cloud Armor                                                                                                  |
+| Deployment Pipelines            | GitHub, Cloud Build, Artifact Registry, Doker, Terraform on GCP
 | Observability & Ops             | Cloud Monitoring, Cloud Logging, Runbooks, Alert Rules                                                                                   |
 | Orchestration & Automation      | Cloud Composer, Vertex AI Pipelines   
