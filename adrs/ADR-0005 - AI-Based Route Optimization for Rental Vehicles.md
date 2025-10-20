@@ -56,30 +56,18 @@ The engine will expose APIs to:
   Simplifies training and operations but increases latency and dependency on connectivity.  
   *Rejected* — unacceptable in offline-prone or high-demand areas.
 
-## Challenges/Trade-offs
+## Risks & Trade-offs
 
-- **Latency vs. Infrastructure Complexity**
- 
- text
-  
-- **Scalability vs. Local Resource Constraints**
+| Risk Area | Description | Mitigation |
+|-----------|-------------|------------|
+|Infrastructure Complexity| Reduced latency at cost of operational burden (edge computing) | Avoid usage where latency can be accepted |
+|Scalability| Edge deployments have limited compute/storage compared to large cloud data centers. | Finding optimal number of edge notes for solution |
+|Data Consistency| Distributed architecture (edge + cloud) requires consistent model updates, version control, data synchronization across nodes | Enabling strong coordination via MCP to avoid data drift |
+|Operational Overhead| For edge nodes, local monitoring, servicing, security updates, and hardware maintenance are required | Outsourcing  maintenance whenever efficient |
+|Security & privacy| Risk of data attacks for GPS tracking and user's PII | Encryption, tokenization, network control |
+|Model Accuracy| Complex ML or RL models may demand higher compute capacity or large input data (traffic, weather, user behavior)| Finding optimal number of parameters for personalization |
+|Cost| Upfront investment is required fro | Invest now in order not to miss the competitive window |
 
- text
- 
-  
-- **Data Synchronization & Consistency**
-
- text
- 
-  
-- **Operational Overhead**
-
- text
- 
-  
-- **Security, Privacy & Compliance**
-
- text
  
 
 > Additional **MCP Trade-offs to watch**
