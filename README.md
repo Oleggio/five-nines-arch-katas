@@ -114,6 +114,23 @@ Our goal is to design a micro-mobility platform for connected scooters, e-bikes,
 | Load Distribution Optimization            | [FR#2I](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |[Fleet Allocation](https://github.com/Oleggio/five-nines-arch-katas/tree/main/hld/scenarios/battery-replacement-and-fleet-allocation) <br> [ADR-0007 Fleet Service](https://github.com/Oleggio/five-nines-arch-katas/blob/main/adrs/ADR-0007%20-%20Fleet%20Service%20as%20the%20Single%20Source%20of%20Truth%20for%20Vehicle%20State.md) <br> [ADR-0005 AI-Based Route Optimization](https://github.com/Oleggio/five-nines-arch-katas/blob/main/adrs/ADR-0005%20-%20AI-Based%20Route%20Optimization%20for%20Rental%20Vehicles.md)|
 | Predictive Maintenance & Cost Forecasting | [FR#2J](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |[Battery Replacement](https://github.com/Oleggio/five-nines-arch-katas/tree/main/hld/scenarios/battery-replacement-and-fleet-allocation) <br> [ADR-0003 Vertex AI as core AI/GenAI platform](https://github.com/Oleggio/five-nines-arch-katas/blob/main/adrs/ADR-0003%20-%20Vertex%20AI%20as%20core%20platform%20for%20AI%20and%20GenAI.md) <br> [ADR-0007 Fleet Service](https://github.com/Oleggio/five-nines-arch-katas/blob/main/adrs/ADR-0007%20-%20Fleet%20Service%20as%20the%20Single%20Source%20of%20Truth%20for%20Vehicle%20State.md)|
 
+### Technology Stack Overview
+| Layer                           | Services / Components                                                                                                                    |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Platform / Cloud Provider       | Google Cloud (GCP)                                                                                                                       |
+| Edge & Connectivity             | MQTT Gateway (GKE), Device Firmware SDK                                                                                                  |
+| Ingestion & Messaging           | Pub/Sub                                                                                                                                  |
+| Processing & Integration        | Dataflow, Eventarc, Protocol Adapters / Enrichers                                                                                        |
+| Storage & Analytics             | Cloud Bigtable, BigQuery, Cloud Storage                                                                                                  |
+| AI & GenAI                      | Vertex AI (AutoML, Pipelines, Feature Store), Gemini, Vertex AI Matching Engine, Prompt Orchestration                                    |
+| Application Layer               | Cloud Run, API Gateway, Identity Platform, Business Services (Pricing, Trips, Ops)                                                       |
+| Geospatial & Mobility           | Google Maps Platform (Routes, Places, Geocoding, Traffic)                                                                                |
+| Security & IAM                  | Cloud IAM, Secret Manager, Cloud Armor                                                                                                   |
+| Deployment Pipelines            | GitHub, Cloud Build, Artifact Registry, Doker, Terraform on GCP                                                                          |
+| Observability & Ops             | Cloud Monitoring, Cloud Logging, Runbooks, Alert Rules                                                                                   |
+| Orchestration & Automation      | Cloud Composer, Vertex AI Pipelines                                                                                                      |
+| MLOps                           | Vertex/Gen AI SDK, Vertex AI Model Registry, Vertex AI Feature Store, Vertex AI Model Monitoring, Vertex AI TensorBoard                  |
+
 ### Target Architecture at a Glance  
 
 **Edge and connectivity**
