@@ -152,6 +152,7 @@ Our goal is to design a micro-mobility platform for connected scooters, e-bikes,
 - Gemini for map grounded conversational search and ops copilots
 - Matching Engine and BigQuery vector search for retrieval and RAG
 - Agent Builder for tool calling and orchestration of fleet, maps, and pricing tools
+- [Add MLOps]
 
 **Applications**
 - Cloud Run microservices for booking, pricing, ops, maintenance
@@ -161,6 +162,7 @@ Our goal is to design a micro-mobility platform for connected scooters, e-bikes,
 **Geospatial and UX**
 - Maps Platform for routing, POI, geocoding, traffic and ETA
 - Ops UI and mobile client consume APIs and AI assistants
+
 
 ## [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
 ## [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
