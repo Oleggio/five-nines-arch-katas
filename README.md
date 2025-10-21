@@ -2,15 +2,15 @@
 > This repository documents the end-to-end architecture thinking process for the given kata scenario prepared by **Five Nines Team**.
 
 ---
-
 ## Table of Contents
 
-- [Overview](#-overview)
-  - [About the Project](#about-the-project)
+- [About the Project](#about-the-project)
   - [Team](#team)
-- [Objectives](#-objectives)
-- [Repository Structure](#-repository-structure)
-- [Technology Stack Overview](#technology-stack-overview)
+  - [Repository Structure](#repository-structure)
+- [Solution Overview](#solution-overview)
+  - [Objectives](#objectives)
+  - [Solution Capabilities](#solution-capabilities)
+  - [Target Architecture at a Glance](#target-architecture-at-a-glance)
 
 ---
 ## About the Project
