@@ -48,7 +48,7 @@ The project was prepared by the team called 'Five Nines' consisting of:
 ## Solution Overview
 Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
 
-## Objectives
+### Objectives
 
 Design from scratch (green field architecture) functionality for:
 - **User Dialogue** - enhanced sales via user-personalized companionship, adaptive route/experience/pricing/charging advise, and driving compliance guidance
@@ -61,11 +61,21 @@ Design from scratch (green field architecture) functionality for:
  
   , while ensuring continuous and smooth system operation of the existing core rental functionality.
 
+### [Business Goals and Drivers](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_0_Business%20goals%20%26%20drivers.md)
+
+### [Business Challenges](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_1_Business%20challenges.md)
+
+### [Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)
+
+### [Non-Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/3_NFRs.md)
+
+### [Assumptions and Constraints](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/4_Assumptions%20and%20constraints.md)
+
 ### Business Capabilities
 
 | Business Capability                       | Related FRs         | Related ADR / HLD Document |
 |-------------------------------------------|---------------------|----------------------------|
-| **Core User Features**                    |                     |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| **Core User Features**                    | | |
 | User Registration and Login               | [1-1](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20A%3A%20Core%20functionality.md)                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) |
 | Vehicle Search and Booking                | [1-2](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20A%3A%20Core%20functionality.md)                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) |
 | Booking (short-term / long-term)          | [1-3](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20A%3A%20Core%20functionality.md)                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) |
@@ -122,3 +132,6 @@ Design from scratch (green field architecture) functionality for:
 **Geospatial and UX**
 - Maps Platform for routing, POI, geocoding, traffic and ETA
 - Ops UI and mobile client consume APIs and AI assistants
+
+### [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
+### [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
