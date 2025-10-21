@@ -33,6 +33,50 @@ This document explicates proposed MLOps end-to-end architecture for ML/AI enable
 
 ## ML Operations Flow
 
+### High-level Architecture & Process Flow
+
+Here’s a step-by-step view of how data flows through the system and how MLOps is structured:
+
+1. **Data Ingestion & Storage**  
+- Raw data (structured, semi-structured) is ingested into BigQuery (or Cloud Storage then staged into BigQuery).  
+- Business-metric data (e.g., sales, cost, conversion logs) are loaded into BigQuery for downstream analytics.  
+- Feature candidates and training-dataset sources are traced and stored.  
+
+2. **Feature Engineering & Feature Store**  
+- Using BigQuery SQL or other transformation engines, features are generated (e.g., aggregations, user behaviour metrics).  
+- These features are written to the Vertex AI Feature Store (batch/historic) and optionally served online for real-time inference.  
+- This ensures consistent features between training and serving.  
+
+3. **Experimentation / Model Training**  
+- A data-science environment (Vertex AI Workbench or notebooks) is used to explore data, build models.  
+- Experiments are tracked using Vertex AI Experiments & TensorBoard.  
+- When ready, a training pipeline is defined and executed via Vertex AI Pipelines.  
+- The pipeline registers metadata via Vertex ML Metadata (parameters, artifacts, metrics).  
+- Models (AutoML or custom training) are produced and stored in the Model Registry.  
+
+4. **Model Evaluation & Selection**  
+- Models are evaluated (accuracy, precision/recall, latency, cost) and compared.  
+- The best model version is promoted from the registry for deployment.  
+
+5. **Deployment**  
+- Models are deployed via Vertex AI Model Registry to endpoints (online or batch).  
+- Endpoints scale automatically; autoscaling, spot-VM options, etc. can be configured.  
+- The serving infrastructure can reference the Feature Store for live features.  
+
+6. **Inference & Business Operation**  
+- Application layer (microservice, web app) calls the deployed endpoint for predictions.  
+- The predictions (and inputs/outputs) are logged back into BigQuery (or Cloud Logging) with timestamps and identifiers.  
+
+7. **Monitoring & Feedback**  
+- Vertex AI Model Monitoring tracks data drift, feature skew, distribution changes, and alert triggers.  
+- Business results (e.g., improved conversion, cost savings) are loaded into BigQuery and correlated with model predictions.  
+- Dashboards display both model-health metrics (e.g., input distribution, error rate, latency) and business KPI metrics (e.g., lift, ROI, throughput).  
+
+8. **Retraining / Continuous Improvement**  
+- Based on triggers (e.g., model performance drop, feature drift, business metric degradation), a new pipeline run is initiated (via Vertex AI Pipelines).  
+- New data is ingested, features refreshed, model retrained and redeployed, closing the loop.  
+
+
 ### Vertex AI Model Evaluation
 
 Vertex AI provides integrated evaluation tools for both traditional ML and GenAI models. At its core, evaluation means:
@@ -45,12 +89,24 @@ Scenario #1. Evaluation for a single model (own ML scenarios)
 1. Upload a dataset (labeled test data or prompt-response pairs)
 2. Run evaluation job
 3. **Vertex AI** calculates metrics depending on the model type: Classification, regression, tabular (for custom metrics)
-4. Results stored in **Vertex AI Model Registry**
+4. Results stored in **Vertex AI Model Registry** per model version.
 
 Scenario #2a. Evaluation for a model combination: Parallel models
-1. 
+> Example: churn = weighted average of 3 models (tree-based, neural net, and rules).
+1. The ensemble is deployed as a custom model container or pipeline component in Vertex AI Pipelines.
+2. Evaluation component is used to (custom Python step) to: aggregate predictions, compute combined metrics, and log ensemble results back to Vertex ML Metadata or Model Registry
+3. Metrics obtained: Weighted accuracy, confidence variance, disagreement ratio, etc.
 
 Scenario #2b. Evaluation for a model combination: Sequential models
+> Example: LLM (Gemini) → ML scorer → rule-based post-filter → final output
+**Each model’s output** is logged in **Vertex AI Experiments**.  
+2. The **evaluation pipeline** (in **Vertex AI Pipelines**) compares:
+   - Input → intermediate outputs → final decision.  
+   - Evaluates both **local model quality** (per stage) and **system-level KPIs** (e.g., user satisfaction, cost, latency).  
+3. Use **Vertex AI Model Monitoring** to continuously capture live metrics for each stage.  
+4. For **GenAI models** (Gemini, PaLM, or custom LLMs):  
+   - Use **Vertex AI Evaluation Service** with *LLM-as-a-judge* or *ground-truth comparisons*.  
+   - Evaluate **semantic similarity**, **toxicity**, **factual accuracy**, and **response helpfulness**.
 
 ### Continuous Evaluation and Drift Detection
 
