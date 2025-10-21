@@ -9,7 +9,7 @@
   - [Repository Structure](#repository-structure)
 - [Solution Overview](#solution-overview)
   - [Objectives](#objectives)
-  - [Solution Capabilities](#solution-capabilities)
+  - [Business Capabilities](#business-capabilities)
   - [Target Architecture at a Glance](#target-architecture-at-a-glance)
 
 ---
@@ -62,7 +62,8 @@ Design from scratch (green field architecture) functionality for:
  
   , while ensuring continuous and smooth system operation of the existing core rental functionality.
 
-### Solution Capabilities
+### Business Capabilities
+
 | Business Capability                       | Related FRs         | Related ADR / HLD Document |
 |-------------------------------------------|---------------------|----------------------------|
 | **Core User Features**                    |                     |                            |
