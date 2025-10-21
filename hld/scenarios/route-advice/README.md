@@ -1,7 +1,7 @@
 
 # AI-enhanced Route Advice System
 ## Overview
-The goal of the system is to provide route/experience advice to user based on their needs, fleet availability and weather conditions.
+The goal of this module is to provide route/experience advice to user based on their needs, fleet availability and weather conditions.
 This should help us achieve the following business goals
 * Revenue growth 
 * Increase in customer satisfaction
