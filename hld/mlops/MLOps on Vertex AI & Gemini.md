@@ -182,3 +182,7 @@ Each model logs metrics independently, while the **fusion evaluator** computes o
 
 These statistics will demonstrate trends and can be used as indicators for associated AI/ML models correctness. Ideally, operational and transporting costs should go down, total mileage along with transporting and operational tasks should demonstrate even distribution, etc. If critical business KPIs will worsen, models should be revised/retrained. 
 
+# References:
+[Vertex AI for BigQuery users](https://cloud.google.com/vertex-ai/docs/beginner/bqml)
+[MLOps on Vertex AI](https://cloud.google.com/vertex-ai/docs/start/introduction-mlops)
+
