@@ -65,7 +65,7 @@ Design from scratch (green field architecture) functionality for:
   - Load distribution (even rental/usage among vehicles)
   - Maintenance prediction (sensor data - e.g. battery)
  
-  , while ensuring continuous and smooth system operation of the existing core rental functionality.
+  Ensure continuous and smooth system operation of the existing core rental functionality.
 
 ### [Business Goals and Drivers](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_0_Business%20goals%20%26%20drivers.md)
 
