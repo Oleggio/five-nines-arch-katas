@@ -18,8 +18,8 @@
 - [Solution Overview](#solution-overview)
   - [Business Capabilities Mapping](#business-capabilities-mapping)
   - [Target Architecture at a Glance](#target-architecture-at-a-glance)
-  - [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
-  - [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
+- [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
+- [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
 
 ---
 ## About the Project
@@ -162,5 +162,5 @@ Our goal is to design a micro-mobility platform for connected scooters, e-bikes,
 - Maps Platform for routing, POI, geocoding, traffic and ETA
 - Ops UI and mobile client consume APIs and AI assistants
 
-### [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
-### [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
+## [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
+## [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
