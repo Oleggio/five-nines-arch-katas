@@ -78,7 +78,9 @@ Design from scratch (green field architecture) functionality for:
 
 ### [Assumptions and Constraints](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/4_Assumptions%20and%20constraints.md)
 
-## ## Solution Overview
+---
+
+## Solution Overview
 Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
 
 ### Business Capabilities Mapping
