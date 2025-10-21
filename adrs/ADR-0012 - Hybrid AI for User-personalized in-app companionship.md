@@ -1,4 +1,4 @@
-# ADR-0012 — ADR-0012 - Hybrid AI for User-Personalized In-app Companionship
+# ADR-0012 - Hybrid AI for User-Personalized In-app Companionship
 
 ## Context
 
