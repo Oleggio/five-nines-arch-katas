@@ -63,22 +63,34 @@ Design from scratch (green field architecture) functionality for:
   , while ensuring continuous and smooth system operation of the existing core rental functionality.
 
 ### Solution Capabilities
-| Functionality / AI Use Case        | Requirement # | Related ADR / HLD Document |
-|-----------------------------------|---------------|----------------------------|
-| Vehicle connectivity & telemetry  |               |                            |
-| Fleet state management            |               |                            |
-| Ride booking and dispatch         |               |                            |
-| Demand forecasting & utilization  |               |                            |
-| Battery & maintenance operations  |               |                            |
-| Geospatial & mobility intelligence|               |                            |
-| User & operations interfaces      |               |                            |
-| Demand prediction (AI)            |               |                            |
-| Dynamic routing & re-balancing (AI)|              |                            |
-| Battery health analytics (AI)     |               |                            |
-| Semantic search & assistance (AI) |               |                            |
-| Generative agent workflows (AI)   |               |                            |
-| Knowledge retrieval (AI)          |               |                            |
-| Continuous evaluation & governance (AI)|           |                            |
+| Business Capability                       | Related FRs         | Related ADR / HLD Document |
+|-------------------------------------------|---------------------|----------------------------|
+| **Core User Features**                    |                     |                            |
+| User Registration and Login               | -                   |                            |
+| Vehicle Search and Booking                | -                   |                            |
+| Booking (short-term / long-term)          | -                   |                            |
+| Lock/Unlock Vehicles via Mobile App       | -                   |                            |
+| Real-Time GPS Tracking                    | -                   |                            |
+| Secure Payment                            | -                   |                            |
+| Return Flow (designated parking, proof)   | -                   |                            |
+| Fees and Charges (penalties, late fees)   | -                   |                            |
+| **Operations Features**                   |                     |                            |
+| Fleet Overview Dashboard                  | -                   |                            |
+| Vehicle Details and History               | -                   |                            |
+| Operational Control (lock/unlock, stop)   | -                   |                            |
+| Task Management (battery swap, relocation)| -                   |                            |
+| Fleet Monitoring (status, regulation data)| -                   |                            |
+| Support and Communication (user ↔ ops)    | -                   |                            |
+| **Advanced / AI-Enabled Capabilities**    |                     |                            |
+| Vehicle Rental & Booking                  | FR#1                |                            |
+| Conversational Assistance (chatbot)       | FR#2A, FR#2E        |                            |
+| Adaptive Route & Ride Experience          | FR#2B, FR#2D        |                            |
+| Personalized Pricing Advice               | FR#2C, FR#2F        |                            |
+| Dynamic Pricing Engine                    | FR#2F               |                            |
+| Demand Forecasting                        | FR#2G               |                            |
+| Fleet Supply & Task Optimization          | FR#2H               |                            |
+| Load Distribution Optimization            | FR#2I               |                            |
+| Predictive Maintenance & Cost Forecasting | FR#2J               |                            |
 
 ### Target Architecture at a Glance  
 
