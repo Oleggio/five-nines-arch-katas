@@ -85,19 +85,19 @@ Vertex AI provides integrated evaluation tools for both traditional ML and GenAI
 - Logging explainability and bias indicators
 We will run evaluation in **Vertex AI Pipelines** (automated CI/CD evaluation).
 
-Scenario #1. Evaluation for a single model (own ML scenarios)
+**Scenario #1**. Evaluation for a single model (own ML scenarios)
 1. Upload a dataset (labeled test data or prompt-response pairs)
 2. Run evaluation job
 3. **Vertex AI** calculates metrics depending on the model type: Classification, regression, tabular (for custom metrics)
 4. Results stored in **Vertex AI Model Registry** per model version.
 
-Scenario #2a. Evaluation for a model combination: Parallel models
+**Scenario #2a**. Evaluation for a model combination: Parallel models
 > Example: churn = weighted average of 3 models (tree-based, neural net, and rules).
 1. The ensemble is deployed as a custom model container or pipeline component in Vertex AI Pipelines.
 2. Evaluation component is used to (custom Python step) to: aggregate predictions, compute combined metrics, and log ensemble results back to Vertex ML Metadata or Model Registry
 3. Metrics obtained: Weighted accuracy, confidence variance, disagreement ratio, etc.
 
-Scenario #2b. Evaluation for a model combination: Sequential models
+**Scenario #2b**. Evaluation for a model combination: Sequential models
 > Example: LLM (Gemini) → ML scorer → rule-based post-filter → final output
 **Each model’s output** is logged in **Vertex AI Experiments**.  
 2. The **evaluation pipeline** (in **Vertex AI Pipelines**) compares:
@@ -107,6 +107,17 @@ Scenario #2b. Evaluation for a model combination: Sequential models
 4. For **GenAI models** (Gemini, PaLM, or custom LLMs):  
    - Use **Vertex AI Evaluation Service** with *LLM-as-a-judge* or *ground-truth comparisons*.  
    - Evaluate **semantic similarity**, **toxicity**, **factual accuracy**, and **response helpfulness**.
+
+**Scenario #3**. Evaluation for a Multi-Objective model
+> Example: route optimization model combining comfort, time, and cost.
+1. Define a custom evaluation metric function in your pipeline:
+```
+def multi_objective_score(route_time, comfort, cost):
+    return 0.4 * normalize(time) + 0.3 * comfort + 0.3 * (1 - cost)
+```
+2. Metric becomes part of the existing Vertex AI Pipeline evaluation step.
+
+   
 
 ### Continuous Evaluation and Drift Detection
 
