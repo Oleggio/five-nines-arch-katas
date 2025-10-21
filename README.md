@@ -3,7 +3,7 @@
 
 ---
 
-## 🧭 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
   - [About the Project](#about-the-project)
@@ -19,9 +19,8 @@ This project is intended to help MobilityCorp achieve its business goals and add
 - increase sales and revenue
 - expand market coverage
 - improve user experience
-- strengthen its market position.
+- strengthen its market position
 
-**Objectives** of the current project will serve as key enablers for these goals. 
 <p align="center">
   <img width="653" height="512" alt="Smart Mobility Ecosystem" src="https://github.com/user-attachments/assets/782d6c68-edf7-4071-a86c-b9467cf36390">
 </p>
@@ -40,6 +39,16 @@ The project was prepared by the team called 'Five Nines' consisting of:
 
 9 **[Bo Connolly](https://www.linkedin.com/in/boconnolly/)**
 
+### Repository Structure
+
+- `adrs/` → Architecture Decision Records 
+- `requirements/` → Business & technical requirements
+- `hld/` → High Level Design artefacts (diagrams, docs)
+---
+## Solution Overview
+**Scope**
+Design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. Focus on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
+
 ## Objectives
 
 Design from scratch (green field architecture) functionality for:
@@ -52,16 +61,24 @@ Design from scratch (green field architecture) functionality for:
   - Maintenance prediction (sensor data - e.g. battery)
  
   , while ensuring continuous and smooth system operation of the existing core rental functionality.
----
-## Solution Overview
-**Scope**
-Design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. Focus on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
 
-### Repository Structure
-
-- `adrs/` → Architecture Decision Records 
-- `requirements/` → Business & technical requirements
-- `hld/` → High Level Design artefacts (diagrams, docs)
+### Solution Capabilities
+| Functionality / AI Use Case        | Requirement # | Related ADR / HLD Document |
+|-----------------------------------|---------------|----------------------------|
+| Vehicle connectivity & telemetry  |               |                            |
+| Fleet state management            |               |                            |
+| Ride booking and dispatch         |               |                            |
+| Demand forecasting & utilization  |               |                            |
+| Battery & maintenance operations  |               |                            |
+| Geospatial & mobility intelligence|               |                            |
+| User & operations interfaces      |               |                            |
+| Demand prediction (AI)            |               |                            |
+| Dynamic routing & re-balancing (AI)|              |                            |
+| Battery health analytics (AI)     |               |                            |
+| Semantic search & assistance (AI) |               |                            |
+| Generative agent workflows (AI)   |               |                            |
+| Knowledge retrieval (AI)          |               |                            |
+| Continuous evaluation & governance (AI)|           |                            |
 
 ### Target Architecture at a Glance  
 
