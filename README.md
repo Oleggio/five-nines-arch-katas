@@ -4,17 +4,19 @@
 ---
 ## Table of Contents
 
+## Table of Contents
+
 - [About the Project](#about-the-project)
   - [Team](#team)
   - [Repository Structure](#repository-structure)
-- [Solution Overview](#solution-overview)
-  - [Objectives](#objectives)
+- [Problem Statement](#problem-statement)
   - [Business Goals and Drivers](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_0_Business%20goals%20%26%20drivers.md)
   - [Business Challenges](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_1_Business%20challenges.md)
   - [Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)
   - [Non-Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/3_NFRs.md)
   - [Assumptions and Constraints](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/4_Assumptions%20and%20constraints.md)
-  - [Business Capabilities](#business-capabilities)
+- [Solution Overview](#solution-overview)
+  - [Business Capabilities Mapping](#business-capabilities-mapping)
   - [Target Architecture at a Glance](#target-architecture-at-a-glance)
   - [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
   - [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
