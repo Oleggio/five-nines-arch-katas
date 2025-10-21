@@ -65,23 +65,23 @@ Design from scratch (green field architecture) functionality for:
 
 | Business Capability                       | Related FRs         | Related ADR / HLD Document |
 |-------------------------------------------|---------------------|----------------------------|
-| **Core User Features**                    |                     |                            |
-| User Registration and Login               | -                   |                            |
-| Vehicle Search and Booking                | -                   |                            |
-| Booking (short-term / long-term)          | -                   |                            |
-| Lock/Unlock Vehicles via Mobile App       | -                   |                            |
-| Real-Time GPS Tracking                    | -                   |                            |
-| Secure Payment                            | -                   |                            |
-| Return Flow (designated parking, proof)   | -                   |                            |
-| Fees and Charges (penalties, late fees)   | -                   |                            |
+| **Core User Features**                    |                     |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| User Registration and Login               | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                            |
+| Vehicle Search and Booking                | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Booking (short-term / long-term)          | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Lock/Unlock Vehicles via Mobile App       | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Real-Time GPS Tracking                    | -                   |[Vehicle Connectivity HLD](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md)                            |
+| Secure Payment                            | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Return Flow (designated parking, proof)   | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Fees and Charges (penalties, late fees)   | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
 | **Operations Features**                   |                     |                            |
-| Fleet Overview Dashboard                  | -                   |                            |
-| Vehicle Details and History               | -                   |                            |
-| Operational Control (lock/unlock, stop)   | -                   |                            |
-| Task Management (battery swap, relocation)| -                   |                            |
-| Fleet Monitoring (status, regulation data)| -                   |                            |
-| Support and Communication (user ↔ ops)    | -                   |                            |
-| **Advanced / AI-Enabled Capabilities**    |                     |                            |
+| Fleet Overview Dashboard                  | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Vehicle Details and History               | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Operational Control (lock/unlock, stop)   | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) [Vehicle Connectivity HLD](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md)                            |
+| Task Management (battery swap, relocation)| -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| Fleet Monitoring (status, regulation data)| -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) [Vehicle Connectivity HLD](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md)                            |
+| Support and Communication (user ↔ ops)    | -                   |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
+| **Advanced / AI-Enabled Capabilities**    |                     |[Core Functionality](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md)                             |
 | Vehicle Rental & Booking                  | [FR#1](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)|                            |
 | Conversational Assistance (chatbot)       | [FR#2A, FR#2E](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)        |                            |
 | Adaptive Route & Ride Experience          | [FR#2B, FR#2D](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)        |                            |
