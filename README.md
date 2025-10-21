@@ -2,7 +2,6 @@
 > This repository documents the end-to-end architecture thinking process for the given kata scenario prepared by **Five Nines Team**.
 
 ---
-## Table of Contents
 
 ## Table of Contents
 
