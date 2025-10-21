@@ -54,6 +54,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 **Related ADRs:** 
 - ADR-TBD: Database selection for zero double-booking guarantee (ACID compliance required)
 - ADR-TBD: Charge calculation algorithm (conservative vs optimistic)
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (authoritative range/charge data)
 
 ---
 
@@ -350,6 +351,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 **Related ADRs:**
 - ADR-TBD: Synchronous unlock API vs async messaging (MQTT)
 - ADR-TBD: NFC security (token encryption, replay attack prevention)
+- ADR-0002: Vehicle telemetry & integration stack (IoT control channel via MQTT/Pub/Sub)
 
 ---
 
@@ -524,7 +526,10 @@ This document details functional requirements for the Car/Van Rental bounded con
 
 **Related ADRs:**
 - ADR-TBD: AI photo verification vs manual inspection (cost/accuracy trade-off)
-- ADR-TBD: Photo storage strategy (retention, GDPR compliance)
+- ADR-0017: Photo Retention Policy for Vehicle Photos (GDPR, storage costs)
+- ADR-0003: Vertex AI as core platform for AI and GenAI (photo analysis)
+- ADR-0001: GCP as main cloud provider (EU storage, privacy baselines)
+ - ADR-0016: Human-in-the-Loop Workflow Design for AI Decisions (review fallback, SLAs)
 
 ---
 
@@ -737,6 +742,7 @@ Rental Charges:
 - ADR-TBD: Fine cap strategy (fixed vs proportional to rental cost)
 - ADR-TBD: Waiver policy automation vs manual override
 - ADR-TBD: Fine prioritization logic when exceeding cap
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (telemetry and photo evidence source)
 
 ---
 
@@ -1048,6 +1054,7 @@ Rental Charges:
 - ADR-TBD: Crew mobile app platform (native iOS/Android vs React Native)
 - ADR-TBD: Offline data sync strategy (eventual consistency)
 - ADR-TBD: Task assignment algorithm (location-based vs skill-based)
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (real-time vehicle data)
 
 ---
 
@@ -1092,7 +1099,7 @@ Rental Charges:
 - Notification Service (real-time alerts)
 
 **Related ADRs:**
-- ADR-TBD: MQTT vs HTTP for telemetry (bandwidth, reliability)
+- ADR-0002: Vehicle telemetry & integration stack (MQTT over TLS, Pub/Sub backbone)
 - ADR-TBD: TimescaleDB vs InfluxDB for time-series data
 
 ---
@@ -1329,6 +1336,8 @@ Rental Charges:
 - ADR-TBD: Maintenance scheduling algorithm (utilization optimization)
 - ADR-TBD: Predictive maintenance using AI (telemetry pattern analysis)
 - ADR-TBD: Service center partner selection criteria
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (odometer, battery health, status)
+- ADR-0003: Vertex AI as core platform for AI and GenAI (predictive maintenance)
 
 ---
 
@@ -1371,6 +1380,9 @@ Rental Charges:
 **Related ADRs:**
 - ADR-TBD: Security controls for remote disable (prevent abuse)
 - ADR-TBD: Legal/compliance review (privacy implications)
+- ADR-0002: Vehicle telemetry & integration stack (secure device command channel)
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (authoritative vehicle status)
+- ADR-0001: GCP as main cloud provider (IAM, audit logging, regional controls)
 
 ---
 
@@ -1454,6 +1466,7 @@ Rental Charges:
 - ADR-TBD: Data retention and anonymization strategy
 - ADR-TBD: EU data residency architecture (multi-region deployment)
 - ADR-TBD: Personal data encryption (at rest and in transit)
+- ADR-0001: GCP as main cloud provider (EU data residency, encryption baselines)
 
 ---
 
@@ -1692,10 +1705,13 @@ Rental Charges:
 - Customer Dispute Resolution (manual review queue)
 
 **Related ADRs:**
-- ADR-0003: Vertex AI as core platform for AI and GenAI
-- ADR-TBD: AI model selection (Vertex AI Vision vs custom CNN)
-- ADR-TBD: Training data strategy and bias mitigation
-- ADR-TBD: Human-in-the-loop workflow design
+- ADR-0003: Vertex AI as core platform for AI and GenAI (model training & serving)
+- ADR-0009: GenAI Model Management on GCP (model lifecycle, versioning)
+- ADR-0011: Model Evaluation Flow using Vertex AI (accuracy validation, A/B testing)
+- ADR-0014: AI Model Selection for Cleanliness Assessment (AutoML first, path to custom detection)
+- ADR-0015: Training Data Strategy and Bias Mitigation for Vision Models (dataset design, labeling, bias checks)
+- ADR-0016: Human-in-the-Loop Workflow Design for AI Decisions (confidence bands, review queues, SLAs)
+- ADR-0001: GCP as main cloud provider (storage for training data, photos)
 
 **Related NFRs:**
 - NFR-AI-001: AI Model Accuracy & Quality (cleanliness assessment)
@@ -1754,10 +1770,14 @@ Rental Charges:
 - Weather API (external data source)
 
 **Related ADRs:**
-- ADR-0003: Vertex AI as core platform for AI and GenAI
+- ADR-0003: Vertex AI as core platform for AI and GenAI (forecasting models)
+- ADR-0009: GenAI Model Management on GCP (model lifecycle, versioning)
+- ADR-0011: Model Evaluation Flow using Vertex AI (forecast accuracy validation)
+- ADR-0006: Knowledge Management on GCP with Vertex AI Integration (historical data storage)
 - ADR-TBD: Demand forecasting integration (batch vs streaming)
 - ADR-TBD: Event schema versioning strategy
 - ADR-TBD: Forecasting model selection (time-series vs ML)
+- ADR-0002: Vehicle telemetry & integration stack (event publishing via Pub/Sub)
 
 **Related NFRs:**
 - NFR-AI-003: AI Model Monitoring & Drift Detection
@@ -1883,10 +1903,15 @@ Rental Charges:
 - Rental Lifecycle Service (inspection completion validation)
 
 **Related ADRs:**
-- ADR-0003: Vertex AI as core platform for AI and GenAI (damage detection)
-- ADR-TBD: Photo retention policy (GDPR compliance, storage costs)
+- ADR-0003: Vertex AI as core platform for AI and GenAI (damage detection models)
+- ADR-0009: GenAI Model Management on GCP (model lifecycle, versioning)
+- ADR-0011: Model Evaluation Flow using Vertex AI (detection accuracy validation)
+- ADR-0017: Photo Retention Policy for Vehicle Photos (GDPR, storage costs)
 - ADR-TBD: AI damage detection threshold tuning (accuracy vs customer friction)
 - ADR-TBD: Damage detection model architecture (AutoML vs custom)
+- ADR-0001: GCP as main cloud provider (photo storage, EU data residency)
+- ADR-0007: Fleet Service as the Single Source of Truth for Vehicle State (damage records)
+- ADR-0016: Human-in-the-Loop Workflow Design for AI Decisions (operations review workflow)
 
 **Related NFRs:**
 - NFR-AI-001: AI Model Accuracy & Quality (damage detection)
