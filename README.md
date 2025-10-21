@@ -52,10 +52,8 @@ The project was prepared by the team called 'Five Nines' consisting of:
 - `requirements/` → Business & technical requirements
 - `hld/` → High Level Design artefacts (diagrams, docs)
 ---
-## Solution Overview
-Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
 
-### Objectives
+## Problem Statement
 
 Design from scratch (green field architecture) functionality for:
 - **User Dialogue** - enhanced sales via user-personalized companionship, adaptive route/experience/pricing/charging advise, and driving compliance guidance
@@ -78,7 +76,10 @@ Design from scratch (green field architecture) functionality for:
 
 ### [Assumptions and Constraints](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/4_Assumptions%20and%20constraints.md)
 
-### Business Capabilities
+## ## Solution Overview
+Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
+
+### Business Capabilities Mapping
 
 | Business Capability                       | Related FRs         | Related ADR / HLD Document |
 |-------------------------------------------|---------------------|----------------------------|
