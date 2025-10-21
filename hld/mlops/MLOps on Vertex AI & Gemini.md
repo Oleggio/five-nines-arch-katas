@@ -76,7 +76,7 @@ Here’s a step-by-step view of how data flows through the system and how MLOps 
 - Based on triggers (e.g., model performance drop, feature drift, business metric degradation), a new pipeline run is initiated (via Vertex AI Pipelines).  
 - New data is ingested, features refreshed, model retrained and redeployed, closing the loop.  
 
-![](/mlops/MLOps%20on%20GCP.png)
+![](MLOps%20on%20GCP.png)
 
 
 ### Vertex AI Model Evaluation
