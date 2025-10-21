@@ -46,8 +46,7 @@ The project was prepared by the team called 'Five Nines' consisting of:
 - `hld/` → High Level Design artefacts (diagrams, docs)
 ---
 ## Solution Overview
-**Scope**
-Design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. Focus on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
+Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
 
 ## Objectives
 
@@ -83,15 +82,15 @@ Design from scratch (green field architecture) functionality for:
 | Fleet Monitoring (status, regulation data)| -                   |                            |
 | Support and Communication (user ↔ ops)    | -                   |                            |
 | **Advanced / AI-Enabled Capabilities**    |                     |                            |
-| Vehicle Rental & Booking                  | FR#1                |                            |
-| Conversational Assistance (chatbot)       | FR#2A, FR#2E        |                            |
-| Adaptive Route & Ride Experience          | FR#2B, FR#2D        |                            |
-| Personalized Pricing Advice               | FR#2C, FR#2F        |                            |
-| Dynamic Pricing Engine                    | FR#2F               |                            |
-| Demand Forecasting                        | FR#2G               |                            |
-| Fleet Supply & Task Optimization          | FR#2H               |                            |
-| Load Distribution Optimization            | FR#2I               |                            |
-| Predictive Maintenance & Cost Forecasting | FR#2J               |                            |
+| Vehicle Rental & Booking                  | [FR#1](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)|                            |
+| Conversational Assistance (chatbot)       | [FR#2A, FR#2E](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)        |                            |
+| Adaptive Route & Ride Experience          | [FR#2B, FR#2D](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)        |                            |
+| Personalized Pricing Advice               | [FR#2C, FR#2F](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)        |                            |
+| Dynamic Pricing Engine                    | [FR#2F](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |                            |
+| Demand Forecasting                        | [FR#2G](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |                            |
+| Fleet Supply & Task Optimization          | [FR#2H](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |                            |
+| Load Distribution Optimization            | [FR#2I](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |                            |
+| Predictive Maintenance & Cost Forecasting | [FR#2J](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)               |                            |
 
 ### Target Architecture at a Glance  
 
