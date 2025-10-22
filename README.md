@@ -165,7 +165,7 @@ Our goal is to design a micro-mobility platform for connected scooters, e-bikes,
 - Identity Platform for auth
 
 **Geospatial and UX**
-- Maps Platform for routing, POI, geocoding, traffic and ETA
+- Maps Platform for routing, POI, geocoding, traffic, and ETA
 - Ops UI and mobile client consume APIs and AI assistants
 
 
