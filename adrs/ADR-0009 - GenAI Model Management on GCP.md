@@ -1,4 +1,4 @@
-# ADR-0014 - GenAI Model Management on GCP
+# ADR-0009 - GenAI Model Management on GCP
 
 ## Context
 Model management includes registering, deploying, versioning, and governing foundation models. While Azure is an option, Vertex AI provides a fully managed model registry and deployment environment integrated with other AI components.
