@@ -1774,9 +1774,9 @@ Rental Charges:
 - ADR-0009: GenAI Model Management on GCP (model lifecycle, versioning)
 - ADR-0011: Model Evaluation Flow using Vertex AI (forecast accuracy validation)
 - ADR-0006: Knowledge Management on GCP with Vertex AI Integration (historical data storage)
+- ADR-0022: Demand Forecasting Model Selection and Architecture (Prophet → ML staged approach)
 - ADR-TBD: Demand forecasting integration (batch vs streaming)
 - ADR-TBD: Event schema versioning strategy
-- ADR-TBD: Forecasting model selection (time-series vs ML)
 - ADR-0002: Vehicle telemetry & integration stack (event publishing via Pub/Sub)
 
 **Related NFRs:**

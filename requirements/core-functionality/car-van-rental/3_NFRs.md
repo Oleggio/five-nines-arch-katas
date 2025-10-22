@@ -802,6 +802,9 @@ This document defines the non-functional requirements (quality attributes) for t
 
 **Measurement:** Forecast vs actual booking volume, Mean Absolute Percentage Error (MAPE), crew repositioning efficiency.
 
+**Related ADRs:**
+- ADR-0022: Demand Forecasting Model Selection and Architecture
+
 **Source:** Business Context - "forecast demand... predict, well, we're going to need more E bikes here"
 
 ---
