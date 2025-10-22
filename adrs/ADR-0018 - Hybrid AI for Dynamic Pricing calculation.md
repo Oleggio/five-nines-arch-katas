@@ -34,8 +34,8 @@ The system will be orchestrated through the **Model Control Plane (MoCoP)** for 
 - **Consideration_1 — Hybrid Approach for Accuracy + Explainability**  
   ML ensures optimized price precision while rules ensure business constraints. GenAI layer adds user-facing explainability to promote trust.
 
-- **Consideration_2 — Continuous Learning from Market Signals**  
-  Models are retrained with event, demand, and competitor data to refine predictions for each region.
+- **Consideration_2 — Continuous & Fast Sync with Market Conditions**  
+  Models are retrained with event, demand, and competitor data to make prices more adjustable and competitive in real-time mode.
 
 - **Consideration_3 — Seamless Integration with User Dialogue System**  
   Enables real-time price advice ([FR#2C](/requirements/2_FRs.md)) within chatbot UI to promote upsell or subscription conversions.
@@ -51,19 +51,14 @@ The system will be orchestrated through the **Model Control Plane (MoCoP)** for 
 - **Alternative_3: GenAI-Only Approach**  
   Provides natural interaction but lacks reliability for numerical precision and may introduce compliance risks.
 
----
-
 ## Risks & Trade-offs
 
 | Risk Area | Description | Mitigation |
 |--|--|--|
-| **Model Drift** | Market patterns change seasonally, leading to inaccurate price recommendations. | Implement continuous retraining and model evaluation pipeline via Vertex AI. |
-| **Latency** | Real-time pricing requires low-latency computation. | Cache frequent routes and apply tiered evaluation (ML prediction first, GenAI optional). |
-| **Explainability** | ML predictions may be hard to justify to end-users or regulators. | Use GenAI layer to provide reasoned explanations from structured inference logs. |
-| **Cost** | Running GenAI models for all requests can increase expenses. | Restrict GenAI to user-facing explanation layer; backend pricing remains ML + rules. |
-| **Data Compliance** | Use of external APIs for competitor data may expose PII or location data. | Anonymize data and host all processing within EU-compliant cloud (Vertex AI EU region). |
-
----
+| **Model Drift** | Market patterns change seasonally, leading to inaccurate price recommendations | Implement continuous retraining and model evaluation pipeline via Vertex AI |
+| **Latency** | Real-time pricing requires low-latency computation | Cache frequent requests and apply tiered evaluation (ML prediction first, GenAI optional - if no up-to-date info on 'external' parameters) |
+| **Cost** | Running GenAI models for all requests can increase expenses | Restrict GenAI to real-time factors (demand, weather, events, competitor pricing); other pricing parameters remain ML + rules. Gather historical information to migrate to own ML in the future |
+| **Data Compliance** | Use of external APIs for competitor data may expose PII or location data | Anonymize data and host all processing within EU-compliant cloud (Vertex AI EU region) |
 
 ## Conclusion
 The **Hybrid AI** design for dynamic pricing aligns with business objectives of competitiveness, transparency, and scalability. It allows flexible orchestration between ML prediction, GenAI explanation, and rule-based enforcement as well as delivering **smart, compliant, and explainable pricing** adaptable to evolving market signals.
