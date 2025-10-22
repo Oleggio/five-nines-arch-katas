@@ -1,4 +1,5 @@
 # ADR-00XX — Title
+
 ## Context
 
 ## Decision
