@@ -67,6 +67,18 @@ Design from scratch (green field architecture) functionality for:
  
   Ensure continuous and smooth system operation of the existing core rental functionality.
 
+#### Requirements Organization
+
+This architecture uses a **two-tier requirements approach**:
+
+**Tier 1: Cross-Cutting View** ([`2_FRs.md`](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md), [`3_NFRs.md`](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/3_NFRs.md))  
+High-level overview of AI/ML scenarios across all vehicle types (cars, vans, bikes, scooters), highlighting commonalities and differences.
+
+**Tier 2: Bounded Context Details** ([`core-functionality/car-van-rental/`](https://github.com/Oleggio/five-nines-arch-katas/tree/main/requirements/core-functionality/car-van-rental))  
+Implementation-ready specifications for specific domains. Car/van rental includes detailed acceptance criteria, thresholds, and ADR references due to higher AI complexity (cleanliness detection, damage assessment).
+
+This separation balances system-wide architectural thinking with deep domain expertise while respecting bounded context autonomy.
+
 ### [Business Goals and Drivers](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_0_Business%20goals%20%26%20drivers.md)
 
 ### [Business Challenges](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_1_Business%20challenges.md)
