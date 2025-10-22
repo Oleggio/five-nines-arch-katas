@@ -555,15 +555,16 @@ This document defines the non-functional requirements (quality attributes) for t
 **Requirement:** AI models must achieve minimum accuracy thresholds for production use.
 
 **Acceptance Criteria:**
-- **Cleanliness Assessment (FR-CV-008):**
+- **Cleanliness Assessment (FR-AI-001):**
   - True Positive Rate: ≥ 90% (correctly flags dirty vehicles)
   - False Positive Rate: ≤ 5% (incorrectly flags clean vehicles)
   - Human review required when confidence < 70%
-- **Damage Detection (FR-CV-025):**
+- **Damage Detection (FR-AI-003):**
   - Precision: ≥ 85% (flagged damage is real)
   - Recall: ≥ 80% (catches most actual damage)
+  - mAP@0.5 ≥ 0.75 (mean Average Precision for object detection)
   - Human review required when confidence < 80%
-- **Demand Forecasting (FR-CV-017):**
+- **Demand Forecasting (FR-AI-002):**
   - Prediction accuracy: ≥ 75% within ±15% margin (e.g., predict 100 bookings, actual 85-115)
   - Forecast horizon: 24-72 hours ahead
 
@@ -571,7 +572,11 @@ This document defines the non-functional requirements (quality attributes) for t
 
 **Measurement:** Confusion matrices, A/B testing against human baseline, production accuracy monitoring.
 
-**Source:** FR-CV-008, FR-CV-025, Business Context cleanliness verification
+**Related ADRs:**
+- ADR-0014: ML Model Selection for Cleanliness Assessment
+- ADR-0020: Damage Detection Model Architecture
+
+**Source:** FR-AI-001, FR-AI-003, FR-AI-002, Business Context cleanliness verification
 
 ---
 
