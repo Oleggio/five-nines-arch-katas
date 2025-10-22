@@ -5,14 +5,14 @@
 Our AI features (FR-AI-001 Vehicle Cleanliness Verification & Cleaning Fees; FR-AI-003 AI-Assisted Damage Detection) require human verification when AI confidence is low or cases are ambiguous. The workflow must prevent unfair customer charges, ensure timely decisions, capture reviewer feedback for model improvement, and comply with privacy and audit requirements.
 
 This ADR defines a standardized HITL (Human-in-the-Loop) workflow for vision decisions, grounded in:
-- ADR-0001 (GCP posture): EU residency, encryption, IAM, audit logging
-- ADR-0003 (Vertex AI platform): managed model serving and integrations
-- ADR-0006 (Knowledge platform): storage of images, labels, and review artifacts
-- ADR-0009 (Model management): versioned models and dataset lineage
-- ADR-0010 (Agent Builder): orchestration for review routing and decision assistance
-- ADR-0011 (Model evaluation): gating criteria and continuous monitoring
-- ADR-0014 (Cleanliness model selection): confidence bands and escalation
-- ADR-0015 (Training data strategy): feedback loop to improve datasets
+- [ADR-0001](ADR-0001%20-%20GCP%20as%20main%20cloud%20provider.md) (GCP posture): EU residency, encryption, IAM, audit logging
+- [ADR-0003](ADR-0003%20-%20Vertex%20AI%20as%20core%20platform%20for%20AI%20and%20GenAI.md) (Vertex AI platform): managed model serving and integrations
+- [ADR-0006](ADR-0006%20-%20Knowledge%20Management%20on%20GCP%20with%20Vertex%20AI%20Integration.md) (Knowledge platform): storage of images, labels, and review artifacts
+- [ADR-0009](ADR-0009%20-%20GenAI%20Model%20Management%20on%20GCP.md) (Model management): versioned models and dataset lineage
+- [ADR-0010](ADR-0010%20-%20Evaluation%20and%20Adoption%20of%20Vertex%20AI%20Agent%20Builder%20for%20AI%20Service%20and%20Orchestration.md) (Agent Builder): orchestration for review routing and decision assistance
+- [ADR-0011](ADR-0011%20-%20Model%20Evaluation%20Flow%20using%20Vertex%20AI.md) (Model evaluation): gating criteria and continuous monitoring
+- [ADR-0014](ADR-0014%20-%20AI%20Model%20Selection%20for%20Cleanliness%20Assessment.md) (Cleanliness model selection): confidence bands and escalation
+- [ADR-0015](ADR-0015%20-%20Training%20Data%20Strategy%20and%20Bias%20Mitigation%20for%20Vision%20Models.md) (Training data strategy): feedback loop to improve datasets
 
 ## Decision
 
