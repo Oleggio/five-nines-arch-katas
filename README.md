@@ -39,7 +39,7 @@ The project was prepared by the team called 'Five Nines' consisting of:
 
 9 **[Oleh Yermilov](https://www.linkedin.com/in/oleg-yermilov-49a389113/)**
 
-9 **[Oleksandra Tytar](https://www.linkedin.com/in/otytar/)**
+9 . **[Oleksandra Tytar](https://www.linkedin.com/in/otytar/)**
 
 9 **[Dmitry Zinkevich](https://www.linkedin.com/in/zinkevich/)**
     
