@@ -22,12 +22,12 @@ This document explicates proposed MLOps end-to-end architecture for ML/AI enable
 |--|--|--|
 | AI service orchestration | Vertex AI Agent Builder | [ADR-0010](/adrs/ADR-0010%20-%20Evaluation%20and%20Adoption%20of%20Vertex%20AI%20Agent%20Builder%20for%20AI%20Service%20and%20Orchestration.md)|
 | ML development env | Vertex AI Workbench | For own ML models only | 
-| AI/ML workflow orchestration | Vertex AI Pipelines | Data preparation → training → evaluation → deployment |
+| AI/ML workflow orchestration | Vertex AI Pipelines | [ADR-0015](/adrs/ADR-0015%20-%20Training%20Data%20Strategy%20and%20Bias%20Mitigation%20for%20Vision%20Models.md) Data preparation → training → evaluation → deployment |
 | ML artifacts management | Vertex ML Metadata | Helps to analyze, debug, and audit the performance of own ML system |
 | AI/ML model versioning | Vertex AI Model Registry | Tracking approved and skipped versions | 
 | ML features | Vertex AI Feature Store | Enables re-using ML features at scale and increase the velocity of deploying new ML applications |
-| ML monitoring | Vertex AI Model Monitoring | |
-| Systematic ML evaluation | Gen AI Evaluation Service | Rubric-based (LLM-as-judge) checks, computation-based metrics (ROUGE/BLEU) and custom metrics (Python functions) for domain-specific scoring |
+| ML monitoring | Vertex AI Model Monitoring | [ADR-0015](/adrs/ADR-0015%20-%20Training%20Data%20Strategy%20and%20Bias%20Mitigation%20for%20Vision%20Models.md)  |
+| Systematic ML evaluation | Gen AI Evaluation Service | [ADR-0016](/adrs/ADR-0016%20-%20Human-in-the-Loop%20Workflow%20Design%20for%20AI%20Decisions.md) Rubric-based (LLM-as-judge) checks, computation-based metrics (ROUGE/BLEU) and custom metrics (Python functions) for domain-specific scoring |
 | Knowledge data management for ML training | BigQuery, Cloud Storage, and Dataflow | [ADR-0006](/adrs/ADR-0006%20-%20Knowledge%20Management%20on%20GCP%20with%20Vertex%20AI%20Integration.md)|
 
 
