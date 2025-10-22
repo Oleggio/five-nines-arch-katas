@@ -11,8 +11,9 @@ This ADR defines a standardized HITL (Human-in-the-Loop) workflow for vision dec
 - [ADR-0009](ADR-0009%20-%20GenAI%20Model%20Management%20on%20GCP.md) (Model management): versioned models and dataset lineage
 - [ADR-0010](ADR-0010%20-%20Evaluation%20and%20Adoption%20of%20Vertex%20AI%20Agent%20Builder%20for%20AI%20Service%20and%20Orchestration.md) (Agent Builder): orchestration for review routing and decision assistance
 - [ADR-0011](ADR-0011%20-%20Model%20Evaluation%20Flow%20using%20Vertex%20AI.md) (Model evaluation): gating criteria and continuous monitoring
-- [ADR-0014](ADR-0014%20-%20AI%20Model%20Selection%20for%20Cleanliness%20Assessment.md) (Cleanliness model selection): confidence bands and escalation
-- [ADR-0015](ADR-0015%20-%20Training%20Data%20Strategy%20and%20Bias%20Mitigation%20for%20Vision%20Models.md) (Training data strategy): feedback loop to improve datasets
+Related architectural decisions:
+- [ADR-0014](ADR-0014%20-%20ML%20Model%20Selection%20for%20Cleanliness%20Assessment.md) (Cleanliness model selection): confidence bands and escalation
+- [ADR-0015](ADR-0015%20-%20Training%20Data%20Strategy%20and%20Bias%20Mitigation%20for%20Vision%20Models.md) (Training data strategy): quality/bias checks inform review triggers
 
 ## Decision
 

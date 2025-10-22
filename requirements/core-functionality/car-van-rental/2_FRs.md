@@ -1708,7 +1708,7 @@ Rental Charges:
 - ADR-0003: Vertex AI as core platform for AI and GenAI (model training & serving)
 - ADR-0009: GenAI Model Management on GCP (model lifecycle, versioning)
 - ADR-0011: Model Evaluation Flow using Vertex AI (accuracy validation, A/B testing)
-- ADR-0014: AI Model Selection for Cleanliness Assessment (AutoML first, path to custom detection)
+- ADR-0014: ML Model Selection for Cleanliness Assessment (AutoML first, path to custom detection)
 - ADR-0015: Training Data Strategy and Bias Mitigation for Vision Models (dataset design, labeling, bias checks)
 - ADR-0016: Human-in-the-Loop Workflow Design for AI Decisions (confidence bands, review queues, SLAs)
 - ADR-0001: GCP as main cloud provider (storage for training data, photos)

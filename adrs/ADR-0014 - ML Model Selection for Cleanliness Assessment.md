@@ -1,8 +1,8 @@
-# ADR-0014 — AI Model Selection for Cleanliness Assessment
+# ADR-0014 — ML Model Selection for Cleanliness Assessment
 
 ## Context
 
-This ADR selects the approach for AI-based cleanliness assessment from customer return photos (see FR-AI-001). The system must classify cleanliness levels (Acceptable, Minor, Major, Severe) and support a human-in-the-loop review for low-confidence cases before charging cleaning fees. Requirements include:
+This ADR selects the ML approach for AI-based cleanliness assessment from customer return photos (see FR-AI-001). The system must classify cleanliness levels (Acceptable, Minor, Major, Severe) and support a human-in-the-loop review for low-confidence cases before charging cleaning fees. Requirements include:
 
 - Fast time-to-value with managed services (inherit ADR-0003 Vertex AI as the core AI platform).
 - Governed model lifecycle (inherit ADR-0009 Model Management on GCP).
