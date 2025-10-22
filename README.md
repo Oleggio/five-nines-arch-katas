@@ -81,7 +81,17 @@ Design from scratch (green field architecture) functionality for:
 ---
 
 ## Solution Overview
-Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants. 
+Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans.
+The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants.
+
+First, we integrated an AI companion into the MobilityCorp mobile app to engage with customers and recommend interesting routes based on their preferences, weather conditions, and destination.
+This helps us provide customers with a unique experience, increasing retention.
+Second, we use the same AI companion to gather customer feedback, which is then summarized and analyzed by AI to give us an understanding of what can be improved and where we should allocate new parking bays.
+We believe this will help us uncover hidden potential and support our expansion strategy.
+Next, we focused on the quality of MobilityCorp vehicles and customer satisfaction.
+We ingest MobilityCorp telemetry data into a custom ML model to predict when to replace batteries before they fail during a ride.
+Then, we designed an ML-powered system to propose better pricing for MobilityCorp customers based on multiple factors.
+Lastly, we leveraged historical MobiCorp data together with real-time route information to forecast demand and optimize fleet allocation.
 
 ### Business Capabilities Mapping
 
