@@ -1,4 +1,4 @@
-# ADR-0013 - Semantic Search on GCP
+# ADR-0008 - Semantic Search on GCP
 
 ## Context
 Semantic search is critical for GenAI use cases, enabling retrieval of relevant and context-aware information. While Azure Cognitive Search or Databricks could be used, leveraging GCP allows for tight integration with Vertex AI and BigQuery vector search.
