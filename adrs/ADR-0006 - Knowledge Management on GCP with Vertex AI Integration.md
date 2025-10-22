@@ -1,3 +1,5 @@
+# ADR-0006 — Knowledge Management on GCP with Vertex AI Integration
+
 ## Context
 Knowledge management is the foundation for GenAI applications. It requires secure, scalable storage and processing of structured and unstructured data, supporting ingestion pipelines and efficient retrieval. This can be implemented on various platforms, including Azure and Databricks. To align with the overall GCP and Vertex AI strategy, we select a GCP-native data platform.
 
