@@ -1,5 +1,6 @@
- # Extra ideas for future AI use:
+ # Extra Ideas for Future AI Use:
 
+- AI-driven marketing & demand generation (explained in detail below);
 - automatic vehicle inspection (phone scanning) for vehicle pick-up and return;
 - fully automated vehicle return process with associated repair/maintenance cost calculation if applicable;
 - geo-economic expansion prediction for next market expansion/acquisition;
@@ -7,6 +8,8 @@
 - automated incident detection and support;
 - AI-augmented route testing;
 - accessibility AI.
+
+--------
 
 ## AI-Driven Marketing & Demand Generation
 
@@ -22,13 +25,14 @@
 ### Example Scenarios
 
 | Vehicle Type | Trigger Conditions | Notification Example | AI/ML Component |
-|--------------|-------------------|----------------------|-----------------|
-| **E-bike/Scooter** | New city (geo-fence entry) + tourist profile | "New to Amsterdam? Explore canals by scooter! 🛴 20% first-ride discount" | User profiling ML + geo-targeting |
-| **E-bike/Scooter** | Traffic jam + commute route (Mon-Fri 7-9am) | "Traffic jam on A10? Rent a bike and make it on time! ⏰" | Real-time traffic API + route history ML |
-| **Car** | Recurring commute pattern (same route 5+ days) | "Same route daily? Subscription saves 30% vs pay-per-use 🚗" | Pattern detection ML + pricing optimization |
-| **Car** | Weather forecast + historical usage | "Rain tomorrow 8am. Pre-book a car to stay dry ☔" | Weather API + user preference ML |
-| **Van** | Weekend + home improvement store proximity | "At IKEA? Rent a van to bring furniture home! 🚚 Available 50m away" | Geo-fencing + POI detection |
-| **Van** | Airport route history + luggage season (summer) | "Family trip next week? Van rental: €45/day, fits 7 passengers + luggage ✈️" | Calendar integration + family profile ML |
+|--------------|--------------------|----------------------|-----------------|
+| E-bike/Scooter | New city (geo-fence entry) + tourist profile | "New to Amsterdam? Explore canals by scooter! 🛴 20% first-ride discount" | User profiling ML + geo-targeting |
+| E-bike/Scooter | Traffic jam + commute route (Mon-Fri 7-9am) | "Traffic jam on A10? Rent a bike and make it on time! ⏰" | Real-time traffic API + route history ML |
+| Car | Recurring commute pattern (same route 5+ days) | "Same route daily? Subscription saves 30% vs pay-per-use 🚗" | Pattern detection ML + pricing optimization |
+| Car | Weather forecast + historical usage | "Rain tomorrow 8am. Pre-book a car to stay dry ☔" | Weather API + user preference ML |
+| Van | Weekend + home improvement store proximity | "At IKEA? Rent a van to bring furniture home! 🚚 Available 50m away" | Geo-fencing + POI detection |
+| Van | Airport route history + luggage season (summer) | "Family trip next week? Van rental: €45/day, fits 7 passengers + luggage ✈️" | Calendar integration + family profile ML |
+> Even more scenarios can be unlocked if not only involving user-consent information sharing device geo-location (>18 y.o.) and calendar info but also social media context and device search queries. 
 
 ### Technical Requirements (High-Level)
 
@@ -78,8 +82,6 @@
 - **Spam**: Frequency caps, easy opt-out, notification quality scoring
 - **Bias**: A/B test across user segments, monitor conversion equity (no demographic discrimination)
 
----
-
 ## Implementation Roadmap (Future Phases)
 
 ### Phase 2 (Post-Launch)
@@ -96,12 +98,11 @@
 - Reinforcement learning for send-time optimization
 - Integration with loyalty program (tier-specific offers)
 
----
-
 **Traceability:**
 - Related to: [FR#2A (Companionship)](../2_FRs.md), [Dynamic Pricing](../hld/scenarios/dynamic-pricing), [Demand Forecasting](../hld/scenarios/demand-forecasting)
 - Builds on: [ADR-0003 (Vertex AI)](../adrs/ADR-0003%20-%20Vertex%20AI%20as%20core%20platform%20for%20AI%20and%20GenAI.md), [ADR-0018 (Dynamic Pricing)](../adrs/ADR-0018%20-%20Hybrid%20AI%20for%20Dynamic%20Pricing%20calculation.md), [ADR-0022 (Demand Forecasting)](../adrs/ADR-0022%20-%20Demand%20Forecasting%20Model%20Selection%20and%20Architecture.md)
 
+--------
 
 # Future enhancements for core functionality:
 
