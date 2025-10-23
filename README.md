@@ -30,7 +30,7 @@ This project is intended to help MobilityCorp achieve its business goals and add
 - strengthen its market position
 
 <p align="center">
-  <img width="653" height="512" alt="" src="503650615-782d6c68-edf7-4071-a86c-b9467cf36390.png">
+  <img width="653" height="512" alt="" src="main.png">
 </p>
 
 ### Team
