@@ -17,11 +17,11 @@ This ADR defines the model architecture and selection process for multi-modal fl
 
 Business requirements and constraints:
 - FR#2H: Predict hourly demand by location zone and vehicle type; 24-hour forecast horizon; weekly retraining
-- NFR-AI-010: Accuracy targets:
+- NFR_9 (AI Model Monitoring): Model accuracy targets for demand forecasting:
   - Short-term (4h): ≥80% within ±20%
   - Medium-term (24h): ≥75% within ±25%
   - Long-term (7d): ≥65% within ±30%
-- NFR-AI-002: Forecast generation ≤60 seconds for 24h ahead; batch processing ≤10 minutes for 7-day rolling forecasts
+- NFR_3 (Performance): Forecast generation ≤60 seconds for 24h ahead; batch processing for 7-day rolling forecasts
 
 Industry best practices and standards:
 - Mean Absolute Percentage Error (MAPE) as standard time-series accuracy metric
@@ -112,7 +112,7 @@ Adopt a **staged approach** with clear upgrade path, prioritizing rapid value de
   - Directional accuracy (did we predict increase/decrease correctly?)
 - **Deployment gates** (ADR-0011):
   - New model must outperform champion by ≥5% MAPE reduction
-  - Backtesting on last 4 weeks must meet NFR-AI-010 thresholds
+  - Backtesting on last 4 weeks must meet NFR_9 accuracy thresholds (75-80% forecasting accuracy)
   - Shadow deployment for 1 week before full promotion
 - **Continuous monitoring**:
   - Track forecast vs actual demand daily
@@ -273,4 +273,4 @@ All models must output standardized JSON for consumption by crew mobile app (FR-
 
 ## Conclusion
 
-Adopt a staged approach for **multi-modal fleet demand forecasting** (scooters, e-bikes, cars, vans): begin with Prophet (statistical time-series model) with **vehicle-type-specific configurations** for rapid deployment and interpretability, deployed on Vertex AI Workbench with predictions served via BigQuery or Cloud Run. Integrate **vehicle-type-weighted exogenous features** (weather impact: scooters -60%, cars +10%; events, holidays) via Vertex AI Feature Store. Use **separate model instances per vehicle type** to capture distinct seasonality patterns (scooters: hourly volatility + weather sensitivity; cars: daily/weekly patterns + advance bookings). If accuracy targets (NFR-AI-010) are not met for any vehicle type, escalate to gradient-boosting ML (LightGBM/XGBoost) or neural networks (LSTM/TFT) hosted on Vertex AI Prediction. All models must integrate with evaluation gates (ADR-0011), continuous monitoring, and **vehicle-type-specific crew repositioning workflows** (scooter relocation, battery swaps, car repositioning per FR-CV-027). This approach balances speed-to-market, operational simplicity, vehicle-specific accuracy, and long-term improvement across the entire fleet.
+Adopt a staged approach for **multi-modal fleet demand forecasting** (scooters, e-bikes, cars, vans): begin with Prophet (statistical time-series model) with **vehicle-type-specific configurations** for rapid deployment and interpretability, deployed on Vertex AI Workbench with predictions served via BigQuery or Cloud Run. Integrate **vehicle-type-weighted exogenous features** (weather impact: scooters -60%, cars +10%; events, holidays) via Vertex AI Feature Store. Use **separate model instances per vehicle type** to capture distinct seasonality patterns (scooters: hourly volatility + weather sensitivity; cars: daily/weekly patterns + advance bookings). If accuracy targets (NFR_9: 75-80% forecasting accuracy) are not met for any vehicle type, escalate to gradient-boosting ML (LightGBM/XGBoost) or neural networks (LSTM/TFT) hosted on Vertex AI Prediction. All models must integrate with evaluation gates (ADR-0011), continuous monitoring, and **vehicle-type-specific crew repositioning workflows** (scooter relocation, battery swaps, car repositioning per FR-CV-027). This approach balances speed-to-market, operational simplicity, vehicle-specific accuracy, and long-term improvement across the entire fleet.

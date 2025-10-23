@@ -15,16 +15,16 @@ This ADR defines the architecture and selection process for the damage detection
 
 Business requirements and constraints:
 - FR#2M: Pre-rental inspection with AI-assisted damage detection, target 80% detection rate with <10% false positives
-- NFR-AI-001: Model accuracy ≥85% precision, ≥80% recall for damage detection
-- NFR-AI-002: Inference latency ≤5 seconds per photo (p95)
-- NFR-AI-006: Explainability required (annotated photos with bounding boxes)
-- NFR-AI-008: Graceful degradation with human review fallback
+- NFR_9 (AI Model Monitoring): Model accuracy ≥85% precision for damage detection
+- NFR_9 (AI Model Monitoring): Inference latency ≤5 seconds per photo (p95)
+- NFR_9 (AI Model Monitoring): Explainability required (annotated photos with bounding boxes and confidence scores)
+- NFR_9 (AI Model Monitoring): Human-in-the-loop fallback (graceful degradation with 24h SLA for manual review)
 
 Industry best practices and standards:
 - COCO dataset format for object detection training/evaluation
 - IoU (Intersection over Union) ≥0.5 for bounding box accuracy
 - mAP (mean Average Precision) as standard metric for multi-class detection
-- ONNX or TensorFlow Lite for model portability (NFR-AI-004)
+- ONNX or TensorFlow Lite for model portability (NFR_9: vendor abstraction layer)
 
 ## Decision
 
@@ -116,7 +116,7 @@ All models (AutoML or custom) must output standardized JSON:
   Confidence-based routing to human review prevents customer harm while improving model via active learning.
 
 - **Portability Consideration**  
-  Custom models trained with exportable formats (ONNX) reduce vendor lock-in risk (NFR-AI-004).
+  Custom models trained with exportable formats (ONNX) reduce vendor lock-in risk (NFR_9).
 
 ## Alternatives Considered
 
