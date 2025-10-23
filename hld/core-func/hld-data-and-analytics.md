@@ -9,11 +9,11 @@ This document outlines a production‑grade, end‑to‑end data analytics archi
 
 ## Architecture Summary
 
--   **Data Domains**: [transactional](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) (OLTP sources - our services), [vehicle event/stream data](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md), files (batch), [third‑party APIs](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/data-structure/data-sourcing.md), and reference/master data.
+-   **Data Domains**: [transactional](README.md) (OLTP sources - our services), [vehicle event/stream data](hld-vehicle-connectivity.md), files (batch), [third‑party APIs](../data-structure/data-sourcing.md), and reference/master data.
     
 -   **Ingestion Modes**: streaming (low‑latency), micro‑batch, and bulk batch.
     
--   **Persistence Layers**: raw landing, bronze (immutable), silver (conformed), gold (serving marts), [feature store for ML](https://github.com/Oleggio/five-nines-arch-katas/blob/16bf176adafb834c43dca1f00c20506605f9dd11/hld/mlops/MLOps%20on%20Vertex%20AI%20&%20Gemini.md), and curated semantic layer for BI.
+-   **Persistence Layers**: raw landing, bronze (immutable), silver (conformed), gold (serving marts), [feature store for ML](../mlops/MLOps%20on%20Vertex%20AI%20&%20Gemini.md), and curated semantic layer for BI.
     
 -   **Processing Paradigms**: ELT in scalable lakehouse, stream processing for near‑real‑time, orchestration for dependency control and SLAs.
     
