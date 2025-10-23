@@ -1,8 +1,11 @@
 
 # Dynamic Pricing Calculation
+
 ## Overview
 To stay competitive, attract more users and use more vehicles,
 MobiCorp applies machine learning to determine the current price based on multiple variables.
+
+> Note: AI scenario is described in detail in [Appendix B](/requirements/Appendix%20B%3A%20AI%20scenarios%20explained.md).
 
 ## Container View
 
