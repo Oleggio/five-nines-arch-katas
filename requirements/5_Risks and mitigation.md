@@ -1,17 +1,19 @@
 # Risks & Mitigation Strategies
 
-> Note: This is a common risk registry for main business concerns. Detailed risk mitigation strategy per each technology choice are to be found in corresponding ADRs. 
+> This is a consolidated risk registry for the overall solution.  
+> Detailed risk trade-offs and mitigation strategies for specific technology decisions can be found in the corresponding ADRs.
 
 | Risk Area | Description | Mitigation |
 |-----------|-------------|------------|
-| Vendor lock-in | Focus on GCP services only (single cloud), deep use of Vertex AI | Use abstraction layers for critical services where feasible; document fallback options |
-| Cost/budgeting | Managed features, MLOps and orchestration can be expensive | Implement cost alerts, quota management, and optimize ingestion pipelines early. Iteratively optimize usage. |
-| Team skills | Vertex AI, IoT expertise required | Training and documentation |
-| GCP Data residency | Compliance with data protection laws |	Regional deployment and policies |
-| Regional availability | GCP services may have latency or compliance limitations in some markets | Regional deployment, multi-region architecture for redundancy |
-| IoT messaging reliability | To guarantee delivery, MQTT QoS handling and Pub/Sub acknowledgment semantics must be carefully aligned. | Enforce QoS 1 or 2 where needed, ensure idempotent message handling, and define retry strategies.|
-| Integration flexibility on GCP | Tightly coupled stack may be less flexible when adding non-Google services.| Keep messaging and storage layers as portable as possible; avoid unnecessary hard coupling |
-| GCP/AI Feature dependency | Dependence on specific GCP features (Gemini, Vertex AI) may limit flexibility if APIs change or pricing shifts | Maintain minimal viable integration surface; monitor vendor updates; design fallback pathways |
-| Overall system scaling | High query loads | Capacity planning and autoscaling |
-| Operational Overhead | Centralized cloud processing requires monitoring and continuous observability. | Integrate with cloud monitoring stack |
-| AI Model Accuracy | Models may degrade if environment changes rapidly | Continuous retraining pipeline with drift detection |
+| **Vendor lock-in** | Heavy reliance on GCP services (Vertex AI, Gemini, Pub/Sub) introduces dependency on a single vendor, with limited portability if costs, APIs, or compliance requirements change. | Use abstraction layers and open standards (e.g., MQTT, REST, gRPC). Document fallback providers. Keep critical services (messaging, storage) portable. Regularly reassess portability options. |
+| **Cost / budgeting** | Managed services, AI/ML pipelines, and orchestration can incur high and unpredictable costs, especially during scale-up or experimentation. | Implement budget alerts, quotas, and detailed cost dashboards. Optimize ingestion and training pipelines early. Use reserved instances or committed use discounts where predictable. Enforce usage reviews quarterly. |
+| **Team skills** | Advanced GCP services (Vertex AI, Agent Builder, IoT stack) require skills that the team may not fully have, leading to implementation risks or slower adoption. | Provide structured training, workshops, and internal knowledge-sharing. Document patterns and reusable components. Bring in GCP experts where needed. |
+| **GCP data residency** | Regulatory and compliance requirements (e.g., GDPR) demand strict EU data residency for sensitive user and mobility data. | Enforce regional deployments in EU zones. Configure IAM policies and VPC Service Controls. Validate compliance with DPA/SCC regularly. |
+| **Regional availability** | Some GCP services may not be available in every target region, or may have latency and compliance restrictions. | Use multi-region architecture with failover. Choose closest available GCP region to user base. For unsupported services, design hybrid alternatives or deploy containerized workloads on GKE/Cloud Run. |
+| **IoT messaging reliability** | To guarantee telemetry and command delivery, MQTT QoS levels and Pub/Sub semantics must align. Poor handling may cause data loss or duplication. | Use QoS 1 or 2 where reliability is required. Ensure idempotent message processing in Fleet Service. Apply retries with exponential backoff and dead-letter queues for failed events. |
+| **Integration flexibility on GCP** | Tightly coupled stack may reduce ability to integrate non-Google services (e.g., external data providers, 3rd party APIs). | Keep integration at messaging (Pub/Sub) and API gateway layers. Favor open APIs (REST/gRPC). Design data storage schemas to be cloud-agnostic when feasible. |
+| **GCP / AI feature dependency** | Dependence on Vertex AI and Gemini for critical AI use cases creates risk if features change, pricing shifts, or APIs are deprecated. | Keep integration surface minimal (via Agent Builder, Matching Engine). Monitor Google Cloud release notes. Prototype fallback with open-source models where feasible. |
+| **Overall system scaling** | High query and telemetry loads may overload ingestion and analytics pipelines if not planned. | Apply capacity planning early. Use autoscaling for GKE, Pub/Sub, and Cloud Run. Load test critical pipelines regularly. Apply caching for frequent queries. |
+| **Operational overhead** | Centralized architecture requires continuous monitoring, alerting, and observability to ensure 99.9%+ uptime. | Use Cloud Monitoring, Logging, and Error Reporting. Automate SLO dashboards and incident response runbooks. Integrate alerts into Ops workflows. |
+| **AI model accuracy** | AI/ML models (pricing, forecasting, route optimization) may degrade due to drift, seasonality, or external events. | Build retraining pipelines with drift detection. Store historical telemetry and user data in BigQuery for continuous evaluation. Use Vertex AI evaluation for regular benchmarking. |
+
