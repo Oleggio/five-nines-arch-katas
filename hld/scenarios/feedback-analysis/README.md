@@ -1,5 +1,6 @@
 
-# AI-assisted Feedback Analysis
+# AI-Assisted Feedback Analysis
+
 ## Overview
 To increase user satisfaction, build loyalty and expand to new locations in every city,
 MobiCorp needs to collect user feedback, analyze, classify it and plan the next action. 
@@ -7,11 +8,13 @@ Feedback can be provided by selecting predefined good/bad options, but also in a
 To reduce costs, this feature could be activated for a subset of users enabled during certain periods of time.
 
 MobiCorp could also dynamically change prompt so that chatbot asks users for certain kinds of feedback: 
-- Vehicle location
-- Ease of driving
-- User interface
+- vehicle location,
+- ease of driving,
+- user interface.
 
 This system could also help with A/B testing if MobiCorp asks for feedback after introducing a new feature to a certain user.
+
+> Note: AI scenario is described in detail in [Appendix B](/requirements/Appendix%20B%3A%20AI%20scenarios%20explained.md).
 
 ## Container View
 
