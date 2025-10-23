@@ -82,10 +82,9 @@ while ensuring continuous and smooth system operation of the existing core renta
 ---
 
 ## Solution Overview
-Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans.
-The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance dispatch, and conversational assistants.
+Our goal is to design a micro-mobility platform for connected scooters, e-bikes, cars, and vans. The value proposition focuses on near-real-time telemetry, fleet state, pricing and demand intelligence, maintenance optimization, and conversational user assistance.
 
-First, we integrated a [Trip Copilot](hld/scenarios/route-advice) AI companion into the MobilityCorp mobile app to recommend routes based on preferences, weather, and destination, enhancing customer experience and retention.
+First, we integrated a [Trip Copilot](hld/scenarios/route-advice) AI companion into the MobilityCorp mobile app to recommend routes based on user location and preferences, weather, destination, and riding style, enhancing customer experience and retention.
 
 Second, we used the AI companion to [gather customer feedback](hld/scenarios/feedback-analysis), which is analyzed to identify improvements and optimal parking bay locations, supporting our expansion strategy.
 
@@ -93,7 +92,7 @@ Next, we focused on vehicle quality and customer satisfaction by ingesting telem
 
 Then, we designed an [ML-powered system](hld/scenarios/dynamic-pricing/README.md) to optimize pricing for customers based on multiple factors.
 
-Lastly, we leveraged historical data and real-time route information to [forecast demand](hld/scenarios/demand-forecasting) and optimize fleet allocation.
+Lastly, we leveraged historical data and real-time route information to [forecast demand](hld/scenarios/demand-forecasting) and optimize fleet allocation to satisfy it.
 
 ### Business Capabilities Mapping
 
