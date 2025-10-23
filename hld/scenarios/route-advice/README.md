@@ -1,10 +1,14 @@
 
-# AI-enhanced Route Advice System
+# AI-Enhanced Route Advice System
+
 ## Overview
 The goal of this module is to provide route/experience advice to user based on their needs, fleet availability and weather conditions.
-This should help us achieve the following business goals
-* Revenue growth 
-* Increase in customer satisfaction
+This should help us achieve the following business goals:
+* revenue growth,
+* increase in customer satisfaction.
+
+> Note: AI scenario is described in detail in [Appendix B](/requirements/Appendix%20B%3A%20AI%20scenarios%20explained.md).
+
 
 ## Container View
 
