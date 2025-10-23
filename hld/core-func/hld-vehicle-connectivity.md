@@ -21,7 +21,7 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 | Observability           | Metrics, logs, alerting, SLOs for telemetry freshness and command latency                            |
 
 ## Commands and Data Flow
-![Vehicle Connectivit](502846556-9d4f4841-6d7f-487d-b412-b6f7b06b1628.png)
+![Vehicle Connectivity](Vehicle%20Connectivity.png)
 
 ## Gateway & Load Balancing
 - Clustered MQTT broker on K8s (e.g., EMQX / HiveMQ), fronted by TCP/SSL load balancer.  
