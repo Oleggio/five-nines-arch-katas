@@ -2,11 +2,9 @@
 
 ## Overview
 
-To improve vehicle utilization, increase user satisfaction, and match growing demand,
-MobiCorp needs to replace batteries before they completely run out of charge or dispose of them when batteries reach the end of life.
-When a battery has fallen below the threshold or its temperature rises above safe levels,
-the system automatically prompts the user to finish their ride
-and estimates battery condition using the in-house trained ML model.
+To improve vehicle utilization, increase user satisfaction, and match growing demand, MobiCorp needs to replace batteries before they completely run out of charge or dispose of them when batteries reach the end of life. When a battery has fallen below the threshold or its temperature rises above safe levels, the system automatically prompts the user to finish their ride and estimates battery condition using the in-house trained ML model.
+
+> Note: AI scenario is described in detail in [Appendix B](/requirements/Appendix%20B%3A%20AI%20scenarios%20explained.md).
 
 ## Container View
 
