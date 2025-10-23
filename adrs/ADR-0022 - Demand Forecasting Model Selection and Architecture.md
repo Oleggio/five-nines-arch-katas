@@ -2,7 +2,7 @@
 
 ## Context
 
-Demand forecasting is critical for proactive vehicle positioning and fleet utilization optimization across **all vehicle types** (scooters, e-bikes, cars, vans), addressing the business challenge "forecast demand to improve vehicle positioning" (FR#2G, FR-AI-002). The system must predict future rental demand by location, time, and vehicle type to enable crew repositioning before peak hours, reducing "vehicle not available" scenarios and improving utilization rates toward the 70% KPI target.
+Demand forecasting is critical for proactive vehicle positioning and fleet utilization optimization across **all vehicle types** (scooters, e-bikes, cars, vans), addressing the business challenge "forecast demand to improve vehicle positioning" (FR#2G, FR#2H). The system must predict future rental demand by location, time, and vehicle type to enable crew repositioning before peak hours, reducing "vehicle not available" scenarios and improving utilization rates toward the 70% KPI target.
 
 **Vehicle-Type-Specific Demand Patterns:**
 - **Scooters/E-bikes**: Highly weather-sensitive; short trips (1-5km); hourly volatility; peak during commute hours; low demand in rain/cold
@@ -16,7 +16,7 @@ This ADR defines the model architecture and selection process for multi-modal fl
 - ADR-0002: Vehicle telemetry & integration stack (event publishing via Pub/Sub)
 
 Business requirements and constraints:
-- FR-AI-002: Predict hourly demand by location zone and vehicle type; 24-hour forecast horizon; weekly retraining
+- FR#2H: Predict hourly demand by location zone and vehicle type; 24-hour forecast horizon; weekly retraining
 - NFR-AI-010: Accuracy targets:
   - Short-term (4h): ≥80% within ±20%
   - Medium-term (24h): ≥75% within ±25%

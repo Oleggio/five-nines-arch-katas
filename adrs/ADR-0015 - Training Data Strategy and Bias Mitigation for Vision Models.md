@@ -3,8 +3,8 @@
 ## Context
 
 AI features depend on reliable computer vision models for:
-- FR-AI-001: Vehicle cleanliness verification (fee decisions)
-- FR-AI-003: Pre-rental damage detection (customer protection, dispute prevention)
+- FR#2L: Vehicle cleanliness verification (fee decisions)
+- FR#2M: Pre-rental damage detection (customer protection, dispute prevention)
 
 These use cases require large, representative, and governed image datasets captured by customers and crew in diverse environments (lighting, weather, locations, devices). Risks include data bias (under-representation of specific vehicle colors, interiors, lighting), privacy/GDPR concerns, and model drift over time.
 

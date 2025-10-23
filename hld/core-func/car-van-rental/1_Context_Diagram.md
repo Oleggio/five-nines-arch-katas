@@ -28,7 +28,7 @@ Shows how the Car/Van Rental system fits into the broader MobilityCorp ecosystem
    - Baseline photos (pre-rental) stored for comparison
    - Return photos (post-rental) stored for AI analysis
 
-2. **AI Cleanliness Assessment (FR-AI-001):**
+2. **AI Cleanliness Assessment (FR#2L):**
    ```
    Car/Van Rental → Cloud Storage → Vertex AI Vision
    ```
@@ -36,14 +36,14 @@ Shows how the Car/Van Rental system fits into the broader MobilityCorp ecosystem
    - Returns confidence score + cleanliness flags
    - Human review if confidence < 90%
 
-3. **AI Damage Detection (FR-AI-003):**
+3. **AI Damage Detection (FR#2M):**
    ```
    Car/Van Rental → Cloud Storage → Vertex AI Vision (custom model)
    ```
    - Detects dents, scratches, cracks
    - Confidence thresholds: >85% auto-flag, 70-85% suggest review
 
-4. **AI Demand Forecasting (FR-AI-002):**
+4. **AI Demand Forecasting (FR#2H):**
    ```
    Car/Van Rental → [Pub/Sub] → AI Demand Forecasting
    AI Demand Forecasting → [REST API] → Car/Van Rental
@@ -79,9 +79,9 @@ Shows how the Car/Van Rental system fits into the broader MobilityCorp ecosystem
 
 | Requirement | System(s) Involved | Visible on Diagram? |
 |-------------|-------------------|---------------------|
-| FR-AI-001: Cleanliness Verification | Vertex AI, Cloud Storage, Car/Van Rental | ✅ Yes - Purple systems |
-| FR-AI-002: Demand Forecasting | AI Demand Forecasting, Car/Van Rental | ✅ Yes - Bi-directional arrows |
-| FR-AI-003: Damage Detection | Vertex AI, Cloud Storage, Car/Van Rental | ✅ Yes - Same pipeline as cleanliness |
+| FR#2L: Cleanliness Verification | Vertex AI, Cloud Storage, Car/Van Rental | ✅ Yes - Purple systems |
+| FR#2H: Demand Forecasting | AI Demand Forecasting, Car/Van Rental | ✅ Yes - Bi-directional arrows |
+| FR#2M: Damage Detection | Vertex AI, Cloud Storage, Car/Van Rental | ✅ Yes - Same pipeline as cleanliness |
 | FR-CV-001: Booking | Consumer Mgmt, Payment, Fleet Mgmt | ✅ Yes - External dependencies |
 | FR-CV-005: NFC Unlock | Vehicle IoT | ✅ Yes - Telemetry & access control |
 | FR-CV-007: Return Verification | Vertex AI, Cloud Storage | ✅ Yes - Photo analysis flow |

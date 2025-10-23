@@ -2,7 +2,7 @@
 
 ## Context
 
-Our AI features (FR-AI-001 Vehicle Cleanliness Verification & Cleaning Fees; FR-AI-003 AI-Assisted Damage Detection) require human verification when AI confidence is low or cases are ambiguous. The workflow must prevent unfair customer charges, ensure timely decisions, capture reviewer feedback for model improvement, and comply with privacy and audit requirements.
+Our AI features (FR#2L Vehicle Cleanliness Verification & Cleaning Fees; FR#2M AI-Assisted Damage Detection) require human verification when AI confidence is low or cases are ambiguous. The workflow must prevent unfair customer charges, ensure timely decisions, capture reviewer feedback for model improvement, and comply with privacy and audit requirements.
 
 This ADR defines a standardized HITL (Human-in-the-Loop) workflow for vision decisions, grounded in:
 - [ADR-0001](ADR-0001%20-%20GCP%20as%20main%20cloud%20provider.md) (GCP posture): EU residency, encryption, IAM, audit logging

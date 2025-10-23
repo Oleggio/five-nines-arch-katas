@@ -5,7 +5,7 @@
 The rental platform operates a large and geographically distributed fleet of vehicles (scooters, cars, vans, e-bikes).  
 Operational efficiency depends on optimizing **vehicle supply**, **charging**, and **maintenance** tasks executed by the field (Ops) team — particularly during off-peak hours.
 
-Functional Requirements [FR#2H](/requirements/2_FRs.md) and [FR#2I](/requirements/2_FRs.md) define:
+Functional Requirements [FR#2I](/requirements/2_FRs.md) and [FR#2J](/requirements/2_FRs.md) define:
 > “Calculate supply (vehicle movement) route and timing, calculate charging tasks for the operational team in the night.”  
 > “Calculate recommended load distribution (even rental/usage among vehicles), then suggest a vehicle to book from the location.”
 
@@ -41,7 +41,7 @@ This combination yields an automated, interpretable optimization cycle that runs
 - **Consideration_2 — Multi-Objective Balancing (Cost / Distance / Load)**  
   Optimization considers multiple KPIs — route length, time window, load balance, and total energy consumption — instead of a single static metric. It also considers real-time conditions like weather.
 
-- **Consideration_3 — Integration with Maintenance Forecasting (FR#2J)**  
+- **Consideration_3 — Integration with Maintenance Forecasting (FR#2K)**  
   The same data feeds maintenance-timing predictions and enables pre-emptive scheduling. The system output is used to create tasks for ops team. 
 
 ## Alternatives Considered

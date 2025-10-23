@@ -432,7 +432,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 
 ---
 
-**Note:** FR-CV-025 (Vehicle Condition Inspection - Pre-Rental) has been moved to **Section 7: AI-Powered Features** as **FR-AI-003**.
+**Note:** FR-CV-025 (Vehicle Condition Inspection - Pre-Rental) has been moved to **Section 7: AI-Powered Features** as **FR#2M**.
 
 ---
 
@@ -500,7 +500,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 **AI Validation Criteria:**
 - Charger connection: Plug visible, properly inserted, no damage
 - Parking position: Vehicle within bay markings, not blocking adjacent spaces
-- Cleanliness: Assessed separately (see FR-AI-001: Vehicle Cleanliness Verification)
+- Cleanliness: Assessed separately (see FR#2L: Vehicle Cleanliness Verification)
 
 **Business Rules:**
 - Wrong location fine: €50 (if outside designated bay but within city)
@@ -533,7 +533,7 @@ This document details functional requirements for the Car/Van Rental bounded con
 
 ---
 
-**Note:** FR-CV-008 (Vehicle Cleanliness Verification) has been moved to **Section 7: AI-Powered Features** as **FR-AI-001**.
+**Note:** FR-CV-008 (Vehicle Cleanliness Verification) has been moved to **Section 7: AI-Powered Features** as **FR#2L**.
 
 ---
 
@@ -636,7 +636,7 @@ Pre-Auth Amount = Max Possible Cost + Max Fines
 - **Rule:** AI-detected excessive mess at return inspection
 - **Calculation:** Minor (€50), Major (€100), Severe (€150)
 - **Cap:** €150
-- **Source:** FR-AI-001 (AI-based cleanliness inspection)
+- **Source:** FR#2L (AI-based cleanliness inspection)
 - **Waiver:** Gold tier first offense waived
 
 **5. No-Show Fee:**
@@ -650,7 +650,7 @@ Pre-Auth Amount = Max Possible Cost + Max Fines
 - **Rule:** New damage detected at return inspection (not in pre-rental photos)
 - **Calculation:** Based on repair quote (varies)
 - **Cap:** Insurance deductible amount (typically €500-€1000)
-- **Source:** FR-CV-007 (Vehicle return & inspection), FR-AI-003 (Pre-rental inspection)
+- **Source:** FR-CV-007 (Vehicle return & inspection), FR#2M (Pre-rental inspection)
 - **Waiver:** None (actual repair costs)
 
 **Consolidated Calculation Logic:**
@@ -945,7 +945,7 @@ Rental Charges:
 - Inspection report submission: Photos, notes, ratings uploaded to cloud
 
 **3. Damage Assessment:**
-- View customer-submitted damage reports (from FR-AI-003: Pre-Rental Inspection)
+- View customer-submitted damage reports (from FR#2M: Pre-Rental Inspection)
 - Compare pre-rental vs post-rental photos side-by-side
 - Assess damage: Severity (minor/moderate/severe), repair cost estimate, photos
 - Approve or dispute customer damage claims
@@ -1386,7 +1386,7 @@ Rental Charges:
 
 ---
 
-**Note:** FR-CV-017 (Event Publishing for AI Demand Forecasting) has been moved to **Section 7: AI-Powered Features** as **FR-AI-002**.
+**Note:** FR-CV-017 (Event Publishing for AI Demand Forecasting) has been moved to **Section 7: AI-Powered Features** as **FR#2H**.
 
 ---
 
@@ -1653,7 +1653,7 @@ Rental Charges:
 
 ## 7. AI-Powered Features
 
-### FR-AI-001: Vehicle Cleanliness Verification & Cleaning Fees
+### FR#2L: Vehicle Cleanliness Verification & Cleaning Fees
 **Business Goal:** Maintain brand quality, customer experience, operational efficiency
 
 **Description:** AI-powered cleanliness assessment from return photos with human verification before fee assessment.
@@ -1714,15 +1714,15 @@ Rental Charges:
 - ADR-0001: GCP as main cloud provider (storage for training data, photos)
 
 **Related NFRs:**
-- NFR-AI-001: AI Model Accuracy & Quality (cleanliness assessment)
-- NFR-AI-002: AI Model Performance & Latency
-- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR#2L: AI Model Accuracy & Quality (cleanliness assessment)
+- NFR#2H: AI Model Performance & Latency
+- NFR#2M: AI Model Monitoring & Drift Detection
 - NFR-AI-006: AI Explainability & Transparency
 - NFR-AI-008: AI System Fallback & Graceful Degradation
 
 ---
 
-### FR-AI-002: AI Demand Forecasting & Vehicle Positioning
+### FR#2H: AI Demand Forecasting & Vehicle Positioning
 **Business Goal:** Improve vehicle positioning, reduce "not available" scenarios
 
 **Description:** Car/Van Rental context publishes domain events to AI Demand Forecasting system for utilization pattern analysis.
@@ -1780,13 +1780,13 @@ Rental Charges:
 - ADR-0002: Vehicle telemetry & integration stack (event publishing via Pub/Sub)
 
 **Related NFRs:**
-- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR#2M: AI Model Monitoring & Drift Detection
 - NFR-AI-004: AI Vendor Lock-In Mitigation
 - NFR-AI-010: Demand Forecasting Accuracy Requirements
 
 ---
 
-### FR-AI-003: AI-Assisted Damage Detection (Pre-Rental Inspection)
+### FR#2M: AI-Assisted Damage Detection (Pre-Rental Inspection)
 **Business Goal:** Customer protection, dispute prevention, damage accountability
 
 **Description:** Customer conducts mandatory vehicle condition inspection before starting rental using mobile app with AI-assisted damage detection to document pre-existing damage.
@@ -1914,9 +1914,9 @@ Rental Charges:
 - ADR-0016: Human-in-the-Loop Workflow Design for AI Decisions (operations review workflow)
 
 **Related NFRs:**
-- NFR-AI-001: AI Model Accuracy & Quality (damage detection)
-- NFR-AI-002: AI Model Performance & Latency
-- NFR-AI-003: AI Model Monitoring & Drift Detection
+- NFR#2L: AI Model Accuracy & Quality (damage detection)
+- NFR#2H: AI Model Performance & Latency
+- NFR#2M: AI Model Monitoring & Drift Detection
 - NFR-AI-007: AI Training Data Quality & Bias Prevention
 - NFR-AI-008: AI System Fallback & Graceful Degradation
 - NFR-AI-009: AI Security & Adversarial Robustness
@@ -2008,11 +2008,11 @@ Rental Charges:
 | FR-CV-026 | Vehicle Maintenance Status Tracking | Fleet Reliability | Operational requirement | ADR-TBD |
 | FR-CV-027 | Crew Mobile App Requirements | Operational Efficiency | Operational requirement | ADR-TBD |
 | **AI-Powered Features** | | | | |
-| **FR-AI-001** | **Vehicle Cleanliness Verification & Fees** | **Brand Quality & Efficiency** | **Business Context: Cleanliness** | **ADR-0003, ADR-TBD** |
-| **FR-AI-002** | **AI Demand Forecasting & Vehicle Positioning** | **Vehicle Positioning** | **Business Challenge: "Forecast demand"** | **ADR-0003, ADR-TBD** |
-| **FR-AI-003** | **AI-Assisted Damage Detection (Pre-Rental)** | **Dispute Prevention** | **Operational best practice** | **ADR-0003, ADR-TBD** |
+| **FR#2L** | **Vehicle Cleanliness Verification & Fees** | **Brand Quality & Efficiency** | **Business Context: Cleanliness** | **ADR-0003, ADR-TBD** |
+| **FR#2H** | **AI Demand Forecasting & Vehicle Positioning** | **Vehicle Positioning** | **Business Challenge: "Forecast demand"** | **ADR-0003, ADR-TBD** |
+| **FR#2M** | **AI-Assisted Damage Detection (Pre-Rental)** | **Dispute Prevention** | **Operational best practice** | **ADR-0003, ADR-TBD** |
 
-**Note:** FR-CV-008, FR-CV-017, and FR-CV-025 have been renumbered as FR-AI-001, FR-AI-002, and FR-AI-003 respectively and moved to the AI-Powered Features section.
+**Note:** FR-CV-008, FR-CV-017, and FR-CV-025 have been renumbered as FR#2L, FR#2H, and FR#2M respectively and moved to the AI-Powered Features section.
 
 ---
 
@@ -2030,7 +2030,7 @@ This functional requirements document demonstrates:
 8. **AI Governance:** Dedicated section for AI features with explicit accuracy targets, monitoring requirements, and ethical considerations
 
 **Key Differentiators:**
-- **AI-Powered Excellence:** Three distinct AI capabilities (FR-AI-001, FR-AI-002, FR-AI-003) with measurable success criteria
+- **AI-Powered Excellence:** Three distinct AI capabilities (FR#2L, FR#2H, FR#2M) with measurable success criteria
 - Charge sufficiency validation prevents customer dissatisfaction
 - Cleanliness AI with <5% false positive target maintains trust
 - Damage detection AI reduces disputes and protects both customer and company

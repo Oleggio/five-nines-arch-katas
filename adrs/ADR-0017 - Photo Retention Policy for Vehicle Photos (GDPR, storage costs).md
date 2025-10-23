@@ -4,8 +4,8 @@
 
 The platform captures and processes photos in multiple flows:
 - FR-CV-007: Customer return verification (parking bay, charger connection, cleanliness)
-- FR-AI-003: Pre-rental inspection (customer-provided) and operations follow-ups
-- FR-AI-001: Cleanliness assessment (AI + human review) using return photos
+- FR#2M: Pre-rental inspection (customer-provided) and operations follow-ups
+- FR#2L: Cleanliness assessment (AI + human review) using return photos
 - Crew/operations photos for manual inspections and disputes
 
 These photos contain personal data (license plates, potentially people, locations) and thus fall under GDPR. We must balance:

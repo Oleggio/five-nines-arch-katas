@@ -2,7 +2,7 @@
 
 ## Context
 
-Damage detection is a critical AI feature for pre- and post-rental vehicle inspection (FR-AI-003), supporting automated fine assessment, dispute prevention, and customer protection. The model must identify and localize scratches, dents, cracks, paint chips, broken glass, and other damage from customer and crew photos, with high accuracy, explainability, and real-time inference capability.
+Damage detection is a critical AI feature for pre- and post-rental vehicle inspection (FR#2M), supporting automated fine assessment, dispute prevention, and customer protection. The model must identify and localize scratches, dents, cracks, paint chips, broken glass, and other damage from customer and crew photos, with high accuracy, explainability, and real-time inference capability.
 
 This ADR defines the architecture and selection process for the damage detection ML model, building on established decisions:
 - ADR-0003: Vertex AI as core platform for AI/ML workloads
@@ -14,7 +14,7 @@ This ADR defines the architecture and selection process for the damage detection
 - ADR-0017: Photo retention policy and GDPR compliance
 
 Business requirements and constraints:
-- FR-AI-003: Pre-rental inspection with AI-assisted damage detection, target 80% detection rate with <10% false positives
+- FR#2M: Pre-rental inspection with AI-assisted damage detection, target 80% detection rate with <10% false positives
 - NFR-AI-001: Model accuracy ≥85% precision, ≥80% recall for damage detection
 - NFR-AI-002: Inference latency ≤5 seconds per photo (p95)
 - NFR-AI-006: Explainability required (annotated photos with bounding boxes)
