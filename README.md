@@ -19,6 +19,7 @@
   - [Tech Stack at a Glance](#tech-stack-at-a-glance)
 - [Risks and Mitigations](requirements/5_Risks%20and%20mitigation.md)
 - [Future Scope](requirements/Appendix%20C%3A%20Future%20scope.md)
+- [References](#references)
 
 ---
 ## About the Project
@@ -171,3 +172,12 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 
 ## [Risks and Mitigations](requirements/5_Risks%20and%20mitigation.md)
 ## [Future Scope](requirements/Appendix%20C%3A%20Future%20scope.md)
+
+_______
+## References:
+- [Google Cloud](https://cloud.google.com/)
+- [Vertex AI](https://cloud.google.com/vertex-ai)
+- [Gemini (Google AI)](https://ai.google.dev/gemini-api)
+- [BigQuery](https://cloud.google.com/bigquery)
+- [MQTT (OASIS Standard v5.0)](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
+- [EU Micromobility Regulation Overview (EC Urban Mobility Observatory)](https://urban-mobility-observatory.transport.ec.europa.eu/resources/case-studies/overview-policy-relating-e-scooters-european-countries_en)
