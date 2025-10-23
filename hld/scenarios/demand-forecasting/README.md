@@ -1,11 +1,11 @@
 # Demand Forecasting
 
 ## Overview
-To improve vehicle utilization, increase user satisfaction, and match actual demand,
-MobiCorp needs to record vehicle usage patterns and predict where to expect the highest demand throughout the day.
-There is historical data available that can be ingested into a custom ML model via Vertex AI Pipeline.
-Daily data is stored throughout the day by the Ride Service, and later it is also ingested by the ML model.
+To improve vehicle utilization, increase user satisfaction, and match actual demand, MobiCorp needs to record vehicle usage patterns and predict where to expect the highest demand throughout the day.
+There is historical data available that can be ingested into a custom ML model via Vertex AI Pipeline. Daily data is stored throughout the day by the Ride Service, and later it is also ingested by the ML model.
 To mitigate the risk of incorrect predictions, MLOps members can monitor the model in production using Vertex AI Model Monitoring.
+
+> Note: AI scenario is described in detail in [Appendix B](/requirements/Appendix%20B%3A%20AI%20scenarios%20explained.md).
 
 **Architecture Decisions:** See [ADR-0022 — Demand Forecasting Model Selection and Architecture](../../../adrs/ADR-0022%20-%20Demand%20Forecasting%20Model%20Selection%20and%20Architecture.md) for model selection rationale, staged approach (Prophet → ML), and accuracy targets.
 
