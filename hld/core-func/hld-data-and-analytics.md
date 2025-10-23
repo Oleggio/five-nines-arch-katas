@@ -9,7 +9,7 @@ This document outlines a production‑grade, end‑to‑end data analytics archi
 
 ## Architecture Summary
 
--   **Data Domains**: [transactional](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) (OLTP sources - our services), [vehicle event/stream data](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md), files (batch), third‑party APIs, and reference/master data.
+-   **Data Domains**: [transactional](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/README.md) (OLTP sources - our services), [vehicle event/stream data](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-vehicle-connectivity.md), files (batch), [third‑party APIs](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/data-structure/data-sourcing.md), and reference/master data.
     
 -   **Ingestion Modes**: streaming (low‑latency), micro‑batch, and bulk batch.
     
