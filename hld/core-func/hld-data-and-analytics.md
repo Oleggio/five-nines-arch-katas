@@ -24,7 +24,7 @@ This document outlines a production‑grade, end‑to‑end data analytics archi
 
 ----------
 
-## High‑Level Diagram
+## Data Flow Diagram
 
 ```mermaid
 ---
