@@ -9,6 +9,8 @@ scalable real-time data handling, and seamless AI/ML capabilities.
 Vehicle connectivity is maintained through MQTT gateways integrated with GCP IoT Platform ([ADR-0002](../../adrs/ADR-0002%20-%20Vehicle%20telemetry%20&%20integration%20stack.md)),
 ensuring reliable telemetry and command exchange for thousands of connected devices.
 
+> **Note:** Detailed architectural documentation for the **Car/Van Rental** bounded context (including context diagrams, container architecture, domain model, and sequence diagrams) is available in [`car-van-rental/`](car-van-rental/README.md). Cars and vans are modeled separately due to distinct patterns: advance bookings, longer durations, charging infrastructure, complex return verification, and corporate account support. To review it you should start with [README.md](./car-van-rental/README.md) file.
+
 ## Container View
 
 | Container Name  | Functionality Overview                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |

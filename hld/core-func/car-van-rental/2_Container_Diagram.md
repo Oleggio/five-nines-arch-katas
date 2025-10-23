@@ -30,32 +30,32 @@ Rental Service → Event Publisher → Pub/Sub → AI Demand Forecasting
 Each container shows relevant NFRs:
 
 **AI Photo Analysis Service:**
-- NFR-AI-002: Timeout 30s, fallback to human review
-- NFR-AI-001: Confidence thresholds 90%, 70%
-- NFR-AI-008: Graceful degradation
+- NFR_9 (AI Model Monitoring): Timeout 30s, fallback to human review (24h SLA)
+- NFR_9 (AI Model Monitoring): Confidence thresholds 90% cleanliness, 85% damage
+- NFR_9 (AI Model Monitoring): Graceful degradation with human-in-the-loop
 
 **AI Orchestration Service:**
-- NFR-AI-003: Drift detection, model monitoring
-- NFR-AI-004: Vendor abstraction layer
-- NFR-AI-005: Cost tracking ($0.002/prediction)
-- NFR-AI-008: Circuit breaker pattern
+- NFR_9 (AI Model Monitoring): Drift detection, continuous accuracy tracking
+- NFR_9 (AI Model Monitoring): Vendor abstraction layer (<2 week migration)
+- NFR_9 (AI Model Monitoring): Cost tracking (≤€0.10-0.15 per check)
+- NFR_2 (Reliability): Circuit breaker pattern for third-party dependencies
 
 **Rental Lifecycle Service:**
-- NFR-CV-002: Vehicle unlock ≤3s (not blocked by AI)
+- NFR_3 (Performance): Vehicle unlock ≤3s (p99, not blocked by AI)
 
 **Crew Dispatch Service:**
-- NFR-AI-006: Explainability (photo highlights, bounding boxes)
+- NFR_9 (AI Model Monitoring): Explainability (photo highlights, bounding boxes, confidence scores)
 
 **Vertex AI Vision:**
 - SLA: 99.9% availability, <5s latency (p95)
 - ADR-0003: Core AI platform decision
 
 **Cloud Storage (GCS):**
-- Retention: 90 days hot, 7 years archive (GDPR compliance)
-- Security: Signed URLs (15-minute expiry)
+- NFR_7 (Compliance): Retention 90 days (photos), 7 years (financial records), GDPR compliance
+- NFR_4 (Security): Signed URLs (15-minute expiry)
 
 **AI Demand Forecasting:**
-- NFR-AI-010: ≥75% accuracy within ±15% margin
+- NFR_9 (AI Model Monitoring): ≥75-80% forecasting accuracy within margins
 
 ---
 
