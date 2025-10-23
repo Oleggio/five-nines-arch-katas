@@ -16,7 +16,7 @@
   - [Assumptions and Constraints](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/4_Assumptions%20and%20constraints.md)
 - [Solution Overview](#solution-overview)
   - [Business Capabilities Mapping](#business-capabilities-mapping)
-  - [Target Architecture at a Glance](#target-architecture-at-a-glance)
+  - [Tech Stack at a Glance](#target-architecture-at-a-glance)
 - [Risks and Mitigations](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/5_Risks%20and%20mitigation.md)
 - [Future Scope](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/Appendix%20C%3A%20Future%20scope.md)
 
@@ -159,7 +159,7 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 | Orchestration & Automation      | Cloud Composer, Vertex AI Pipelines                                                                                                      |
 | MLOps                           | Vertex/Gen AI SDK, Vertex AI Model Registry, Vertex AI Feature Store, Vertex AI Model Monitoring, Vertex AI TensorBoard                  |
 
-### Target Architecture at a Glance  
+### Tech Stack at a Glance  
 
 **Edge and connectivity**
 
@@ -171,9 +171,15 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 - Pub/Sub as event backbone for telemetry and commands
 - Dataflow pipelines for parsing, validation, dedupe, geofencing enrichment, road snapping, and fan-out to storage and APIs
 
-**State and data**
-- Fleet Service is the single source of truth for vehicle state
-- BigQuery for analytical models, reporting, pricing inputs, and demand forecasting features.
+**Data and Analytics**
+
+- Ingestion: streaming, micro-batch, and bulk batch modes across transactional sources, vehicle telemetry, files, APIs, and reference data
+- Persistence: multi-layer lakehouse with raw, bronze, silver, gold, feature store, and curated semantic layer
+- Processing: Dataflow (stream/batch), Dataproc/Spark, BigQuery SQL, Vertex AI for feature engineering and ML pipelines; orchestrated with Airflow/Prefect/Dagster
+- Analytics Surfaces: governed semantic layer, BI dashboards in Looker, SQL/Notebook workspaces, ML experiment tracking, curated APIs
+- Reliability: multi-AZ baseline, optional multi-region with RPO 0–5 min (streaming) and RTO ≈15 min for critical services
+- Governance: schema contracts, lineage, RBAC/ABAC, PII tokenization, audit logs ≥400 days
+- FinOps & Ops: unit cost tracking, observability (lag, throughput, error rates), structured logging, OpenTelemetry tracing
 
 **AI and GenAI**
 - Vertex AI for model lifecycle and evaluation
