@@ -142,23 +142,6 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 | **Analytics Capabilities**                 |  |   |
 | Data And Analytics Architecture            |  [FR(Ap.A)2-1](https://github.com/Oleggio/five-nines-arch-katas/blob/ea52e28a485c5259a9ed69264c91bd99fa0eb0df/requirements/Appendix%20A%3A%20Core%20functionality.md)| [Data and Analytics Technology Architecture](https://github.com/Oleggio/five-nines-arch-katas/blob/main/hld/core-func/hld-data-and-analytics.md)  |
 
-### Technology Stack Overview
-| Layer                           | Services / Components                                                                                                                    |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Platform / Cloud Provider       | Google Cloud (GCP)                                                                                                                       |
-| Edge & Connectivity             | MQTT Gateway (GKE), Device Firmware SDK                                                                                                  |
-| Ingestion & Messaging           | Pub/Sub                                                                                                                                  |
-| Processing & Integration        | Dataflow, Eventarc, Protocol Adapters / Enrichers                                                                                        |
-| Storage & Analytics             | Cloud Bigtable, BigQuery, Cloud Storage                                                                                                  |
-| AI & GenAI                      | Vertex AI (AutoML, Pipelines, Feature Store), Gemini, Vertex AI Matching Engine, Prompt Orchestration                                    |
-| Application Layer               | Cloud Run, API Gateway, Identity Platform, Business Services (Pricing, Trips, Ops)                                                       |
-| Geospatial & Mobility           | Google Maps Platform (Routes, Places, Geocoding, Traffic)                                                                                |
-| Security & IAM                  | Cloud IAM, Secret Manager, Cloud Armor                                                                                                   |
-| Deployment Pipelines            | GitHub, Cloud Build, Artifact Registry, Doker, Terraform on GCP                                                                          |
-| Observability & Ops             | Cloud Monitoring, Cloud Logging, Runbooks, Alert Rules                                                                                   |
-| Orchestration & Automation      | Cloud Composer, Vertex AI Pipelines                                                                                                      |
-| MLOps                           | Vertex/Gen AI SDK, Vertex AI Model Registry, Vertex AI Feature Store, Vertex AI Model Monitoring, Vertex AI TensorBoard                  |
-
 ### Tech Stack at a Glance  
 
 **Edge and connectivity**
