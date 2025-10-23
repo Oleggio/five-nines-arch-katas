@@ -25,10 +25,10 @@
 ## About the Project
 
 This project is intended to help MobilityCorp achieve its business goals and address its biggest business challenges by offering the most optimal technology stack and architectural solution. The company's goals are: 
-- increase sales and revenue
-- expand market coverage
-- improve user experience
-- strengthen its market position
+- increase sales and revenue,
+- expand market coverage,
+- improve user experience and satisfaction,
+- strengthen its market position.
 
 <p align="center">
   <img width="653" height="512" alt="" src="main.png">
@@ -58,15 +58,15 @@ The project was prepared by the team called 'Five Nines' consisting of:
 ## Problem Statement
 
 Design from scratch (green field architecture) functionality for:
-- **User Dialogue** - enhanced sales via user-personalized companionship, adaptive route/experience/pricing/charging advise, and driving compliance guidance
-- **Dynamic Pricing** - sales support with more competitive pricing, addresses expansion ambitions and retention goals
-- **Demand Forecasting** - uses internal and external data (weather, traffic, events) to forecast demand
+- **User Dialogue** - enhanced sales via user-personalized companionship, adaptive route/experience/pricing/charging advise, and driving compliance guidance;
+- **Dynamic Pricing** - sales support with more competitive pricing, addresses expansion ambitions and retention goals;
+- **Demand Forecasting** - uses internal and external data (weather, traffic, events) to forecast demand;
 - **Maintenance Optimization** (cost reduction) via:
-  - Operational efficiency (location/fleet/route supply optimisation, transportation/charge task assignment)
-  - Load distribution (even rental/usage among vehicles)
-  - Maintenance prediction (sensor data - e.g. battery)
+  - Operational efficiency (location/fleet/route supply optimisation, transportation/charge task assignment);
+  - Load distribution (even rental/usage among vehicles);
+  - Maintenance prediction (sensor data - e.g. battery);
  
-  Ensure continuous and smooth system operation of the existing core rental functionality.
+while ensuring continuous and smooth system operation of the existing core rental functionality.
 
 ### [Business Goals and Drivers](requirements/1_0_Business%20goals%20%26%20drivers.md)
 
@@ -97,7 +97,7 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 
 ### Business Capabilities Mapping
 
-| Business Capability                        | Related FRs                                                                                                              | Related ADR / HLD Document                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Business Capability                        | Related FRs                                                                                                              | Related ADR / HLD Document |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|--|
 | **Core User Features**                     |   |
 | User Registration and Login                | [1-1](requirements/Appendix%20A%3A%20Core%20functionality.md) | [Core Functionality](hld/core-func/README.md)   |
