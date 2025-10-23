@@ -84,7 +84,7 @@ This separation balances system-wide architectural thinking with deep domain exp
 ### [Business Challenges](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/1_1_Business%20challenges.md)
 
 ### [Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/2_FRs.md)
-* [Data Model Samples](https://github.com/Oleggio/five-nines-arch-katas/tree/main/hld/data-structure)
+* [Data Model Samples & Data Sourcing](https://github.com/Oleggio/five-nines-arch-katas/tree/main/hld/data-structure)
 
 ### [Non-Functional Requirements](https://github.com/Oleggio/five-nines-arch-katas/blob/main/requirements/3_NFRs.md)
 
