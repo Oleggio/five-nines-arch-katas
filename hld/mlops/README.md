@@ -120,7 +120,6 @@ def multi_objective_score(route_time, comfort, cost):
 2. Metric becomes part of the existing Vertex AI Pipeline evaluation step.
 
    
-
 ### Continuous Evaluation and Drift Detection
 
 Vertex AI supports ongoing evaluation through:
@@ -130,7 +129,6 @@ Vertex AI supports ongoing evaluation through:
 | **Explainable AI** | Shows feature importance per model in the ensemble |
 | **Vertex AI Experiments** |Tracks performance over different pipeline versions |
 |**Evaluation Jobs in Pipelines** | Automates re-evaluation after retraining or deployment |
-
 
 
 ## Architecture for Combined Model Evaluation
@@ -169,7 +167,9 @@ Each model logs metrics independently, while the **fusion evaluator** computes o
 3. AI calculates user profile (age group, cost group, ride group) and user behavior patterns (booking, payments, riding, support, cancelations, complaints).
 4. Feature store is fetched with user behavior patterns which are also shared with BigQuery / Bigtable for analytics.
 
-**Examples of Data analytics reports related to ML evaluation**
+--------
+
+**Examples of Data analytics reports related to ML evaluation:**
 
 1. Standard deviation of total mileage per vehicle inside of vehicle category (vans, cars, ebikes, skooters)
 2. Operational cost dynamics: maintenance cost per vehicle/fleet on territory per period
@@ -181,6 +181,8 @@ Each model logs metrics independently, while the **fusion evaluator** computes o
 8. Statistics on unresolved support requests requiring a call with live operator
 
 These statistics will demonstrate trends and can be used as indicators for associated AI/ML models correctness. Ideally, operational and transporting costs should go down, total mileage along with transporting and operational tasks should demonstrate even distribution, etc. If critical business KPIs will worsen, models should be revised/retrained. 
+
+-------
 
 # References:
 [Vertex AI for BigQuery users](https://cloud.google.com/vertex-ai/docs/beginner/bqml)
