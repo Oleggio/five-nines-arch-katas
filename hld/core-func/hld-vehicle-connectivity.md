@@ -42,8 +42,8 @@ Vehicles use lightweight protocols (MQTT, HTTPS) to connect through a gateway la
 - Buffering & late data handling built in.
 
 ## Storage & Processing
-- Hot: time-series DB (e.g., Bigtable / Cassandra).  
-- Analytics: warehouse (e.g., BigQuery / Redshift).  
+- Hot: time-series DB (e.g., Bigtable).  
+- Analytics: warehouse (e.g., BigQuery).  
 - Media & firmware: object storage.  
 - Stream processors for enrichment and geo-tagging.
 
