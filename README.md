@@ -20,6 +20,7 @@
   - [Tech Stack at a Glance](#tech-stack-at-a-glance)
 - [Risks and Mitigations](requirements/5_Risks%20and%20mitigation.md)
 - [Future Scope](requirements/Appendix%20C%3A%20Future%20scope.md)
+- [VIDEO presentation](#video-presentation)
 - [References](#references)
 
 ---
@@ -174,6 +175,10 @@ Lastly, we leveraged historical data and real-time route information to [forecas
 ## [Risks and Mitigations](requirements/5_Risks%20and%20mitigation.md)
 ## [Future Scope](requirements/Appendix%20C%3A%20Future%20scope.md)
 
+## VIDEO presentation
+
+[video link](https://drive.google.com/file/d/1cTSJX56EMU0nr2R3Q0yeo3j4QhXf-aXr/view?usp=sharing)
+  Click the link to watch the video.
 _______
 ## References:
 - [Google Cloud](https://cloud.google.com/)
