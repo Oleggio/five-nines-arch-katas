@@ -10,10 +10,10 @@
 ## 0:00–0:40 – Customer Voices – Why We’re Doing This
 🎥 *Video montage (40 seconds)*
 
-> “When I rent a scooter, I just want it to work.”  
-> “Sometimes the bike isn’t where the app says.”  
-> “Refunds take forever – I just want clarity.”  
-> “If pricing changes mid-day, I want to understand why.”
+> “When I rent a scooter, I want it work till my destination point.”  
+> “I ride same routes every day, but sometimes the bike just isn’t there.”  
+> “For damaged vehicles, disputes take forever.”  
+> “I want best pricing for my long and repeated rides.”
 
 **Narration:**
 > “Our customers want a reliable, transparent, and fair experience.  
