@@ -188,4 +188,4 @@ _______
 - [MQTT (OASIS Standard v5.0)](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
 - [EU Micromobility Regulation Overview (EC Urban Mobility Observatory)](https://urban-mobility-observatory.transport.ec.europa.eu/resources/case-studies/overview-policy-relating-e-scooters-european-countries_en)
 
-> Note: Portions of this document were developed using AI-assisted tools under human supervision. All final content was proofread, reviewed, and approved by the authors who take full responsibility for its content.
+> Note: Portions of this document were developed using AI-assisted tools under human supervision. All final content was proofread, reviewed, and approved by the authors who take full responsibility for it.
