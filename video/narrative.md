@@ -28,7 +28,7 @@
 > Historically, each mode ran on its own systems and data silos.  
 >
 > Our mission is to unify this ecosystem through intelligent services that continuously learn and adapt:  
-> - **+12 % utilization**  
+> - **+32 % utilization**  
 > - **−€22 maintenance cost per vehicle per month**  
 > - **−45 % dispute refunds**
 >
