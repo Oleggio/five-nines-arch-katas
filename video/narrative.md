@@ -24,13 +24,13 @@
 ## 0:40–1:20 – Context & Ambition
 **Slide:** *Scale of Multi-Modal Complexity*
 
-> “We operate **2 800 cars and vans**, **8 500 bikes**, and **12 000 scooters** across cities.  
+> “We operate **200 cars and vans**, **500 bikes**, and **5,000 scooters** across cities.  
 > Historically, each mode ran on its own systems and data silos.  
 >
 > Our mission is to unify this ecosystem through intelligent services that continuously learn and adapt:  
-> - **+32 % utilization**  
-> - **−€22 maintenance cost per vehicle per month**  
-> - **−45 % dispute refunds**
+> - **+32% utilization**  
+> - **−€22 average maintenance cost per vehicle per month**  
+> - **−45% dispute refunds**
 >
 > Let’s look at three **AI-driven use cases** that deliver these results.”
 
