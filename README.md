@@ -1,5 +1,12 @@
 # Oreilly' Architectural Katas Q4 2025: AI-Enabled Architecture
 > This repository documents the end-to-end architecture thinking process for the given kata scenario prepared by **Five Nines Team**.
+> **This solution is the winner of the Kata Q4 2025: AI-Enabled Architecture**
+>
+> Final presentation recording is available under [this link](https://drive.google.com/file/d/1cTSJX56EMU0nr2R3Q0yeo3j4QhXf-aXr/view?usp=drive_link).
+
+<p align="center">
+<img width="500" height="500" alt="289752_Katas_Place_Badge_First (1)" src="https://github.com/user-attachments/assets/3fc98fdc-6977-47fe-8169-1865e5ffad3c" >
+</p>
 
 ---
 
